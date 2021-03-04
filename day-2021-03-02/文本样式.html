@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #text {
+            /* 
+          颜色的表示方式:border:    
+                1. 直接英文单词的形式;
+                2. rgb:红绿蓝,每个数字的取值范围是0-255
+                3. rgba:带有透明度,a取值0-1,0是完全透明(利用透明度可以使某个元素消失)
+                4. HEX:十六进制颜色,#fff:白色
+          */
+            font-size: 28px;
+
+            /* color: rgba(238, 130, 238, 0.5); */
+            color: rgb(34, 34, 18);
+            text-align: center;
+            /* 文本对齐方式:left\right\cneter */
+            line-height: 44px; /* 应用场景,垂直方向居中 */
+            text-decoration-line: underline;
+            text-decoration-style: double;
+            text-decoration-color: blueviolet;
+            text-indent: 2em;
+            /* 缩进:em表示当前文字的宽度 */
+            letter-spacing: 10px;
+            /* 文字之间的空隙 */
+        }
+
+         a {
+            text-decoration-line: blink;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="text">今天晚上上课</p>
+    <p id="text">今天晚上上课</p>
+    <p id="tewxt" style="text-align: center;font-size: 28px;">今天晚上上课</p>
+    <a href="http://z.cn">亚马逊</a>
+</body>
+
+</html>

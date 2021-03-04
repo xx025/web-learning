@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 20px;
+            font-family: 楷体;
+            font-weight: 600;
+        }
+        
+        #div1>div>p {
+            color: rgb(199, 38, 92);
+            /* 子选择器 */
+        }
+        
+        #div1+h1 {
+            color: yellow;
+            /* 
+            兄弟选择器 
+            直接的兄弟
+            */
+        }
+        
+        p,
+        h1 {
+            color: blueviolet;
+            /* 组选择器 */
+        }
+        
+        #div1:hover {
+            background-color: lawngreen;
+            /* 状态选择器 */
+            /* a:状态 */
+        }
+        
+        input:focus {
+            background-color: rgba(0, 255, 255, 0.322);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 
+    1. 通配符选择器
+        语法: *{}
+    2. 后代选择器
+        语法: 元素 元素 {}
+        后代: 包含子子孙孙辈
+    3. 子选择器
+        语法: 元素>元素{}
+    4. 相邻选择器
+        语法:元素+元素{}
+        注意: 往下找的第一个兄弟
+    5. 组选择器
+        语法: 元素,元素 {}
+    6. 伪类选择器
+        语法: 元素:状态 {}
+    -->
+    <p>ssss</p>
+    <div id="div1">
+        <p>儿子辈</p>
+        <div>
+            <p>孙子辈</p>
+        </div>
+    </div>
+    <h1>积极健康</h1>
+    <p>hhhhhhh</p>
+    <br>
+    <input type="text">
+</body>
+
+</html>
+
+</html>
