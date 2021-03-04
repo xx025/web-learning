@@ -24,9 +24,15 @@ web-learning
          <img src="https://cdn.jsdelivr.net/gh/xx025/cloudimg/img/ltc.gif" style="zoom:50%;" />
    
 1. 参考(学习文档)
-   
+
    1. css参考手册:http://css.doyoe.com/
+      
       1. 或者,https://github.com/xx025/web-learning/blob/main/css.chm
+      
    1. 一些参考代码和ppt和每日总结
       1. https://github.com/xx025/web-learning/tree/main/reference-code
       1. 是压缩文件,需下载后解压打开
+
+   1. [🔗OneNote实时同步总结](OneNote实时同步总结)
+
+      
