@@ -33,6 +33,6 @@ web-learning
       1. https://github.com/xx025/web-learning/tree/main/reference-code
       1. 是压缩文件,需下载后解压打开
 
-   1. [🔗OneNote实时同步总结](OneNote实时同步总结)
+   1. [OneNote实时同步总结](OneNote实时同步总结)
 
       
