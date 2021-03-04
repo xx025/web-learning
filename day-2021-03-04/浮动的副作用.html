@@ -10,14 +10,45 @@
         .box {
             width: 400px;
             /* height: 400px; */
-            background-color: blueviolet;
+            background-color: rgb(235, 32, 218);
         }
 
         .box div {
             float: left;
             width: 100px;
             height: 100px;
-            background-color: brown;
+            background-color: rgb(233, 39, 39);
+        }
+
+        /* 
+            1. 空标签清除浮动
+                1. 空标签必须是块元素
+        */
+        /* .box p {
+            clear: both;
+        } */
+        /* 
+            2. 给父容器增加高度
+            3. 给父容器设置overflow为hedden
+         */
+
+      /*   .box {
+            overflow: hidden;
+        } */
+        /* 
+            4. after伪类的形式
+        */
+        .box::after{
+            clear: both;
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            visibility: hidden;
+        }
+
+        body>p::after{
+            content: "----台hello词";
         }
     </style>
 </head>
@@ -27,7 +58,11 @@
     <div class="box">
         <div></div>
         <div></div>
+        <p></p>
     </div>
+    <p>
+        kkkkk
+    </p>
 </body>
 
 </html>
