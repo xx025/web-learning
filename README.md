@@ -21,5 +21,12 @@ web-learning
    
       2. DeskPins可以将窗口固定在最前端(比较方便,免去切换窗口)
       
-         <img src="https://cdn.jsdelivr.net/gh/xx025/cloudimg/img/image-20210304092918618.png" alt="image-20210304092918618" style="zoom:33%;" />
+         <img src="https://cdn.jsdelivr.net/gh/xx025/cloudimg/img/ltc.gif" style="zoom:50%;" />
    
+1. 参考(学习文档)
+   
+   1. css参考手册:http://css.doyoe.com/
+      1. 或者,https://github.com/xx025/web-learning/blob/main/css.chm
+   1. 一些参考代码和ppt和每日总结
+      1. https://github.com/xx025/web-learning/tree/main/reference-code
+      1. 是压缩文件,需下载后解压打开
