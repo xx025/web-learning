@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .div1 {
+            width: 400px;
+            height: 400px;
+            background-color: rgb(84, 226, 226);
+            /* font-size: larger;
+            text-align: center; */
+        }
+
+        .div2,
+        .div3 {
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+
+        .div2 {
+            background-color: rgb(164, 164, 136);
+            
+        }
+
+        .div3 {
+            background-color: yellow;
+            /* float: right; */
+        }
+    </style>
 </head>
+
 <body>
-    
+    <!-- 
+        浮动停止:
+            1. 碰触到父元素边框停止
+            2. 碰触到浮动元素的边框
+     -->
+    <div class="div1">1
+        <div class="div2">2</div>
+
+        <div class="div3">3</div>
+    </div>
 </body>
+
 </html>
