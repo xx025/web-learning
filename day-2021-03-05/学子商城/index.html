@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- 先加载public.css后继在index.css -->
     <link rel="stylesheet" href="css/public.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
@@ -21,22 +22,81 @@
         <div class="fl search">
             <!-- 搜索 -->
             <form action="">
-                <!-- 行内块元素有间隙,去掉间隙用浮动 --> <input type="text" name="" id="" placeholder="请输入商品名称"> <a href="#"><img
-                        src="images/header/search.png" alt="搜索"></a>
+                <!-- 行内块元素有间隙,去掉间隙用浮动 -->
+                <input type="text" name="" id="" placeholder="请输入商品名称">
+                <a href="#">
+                    <img src="images/header/search.png" alt="搜索"></a>
             </form>
         </div>
 
         <div class="fr menu">
             <ul>
-                <li> <a href="#"> <img src="images/header/care.png" alt="收藏"> </a> <span>|</span> </li>
-                <li> <a href="#"> <img src="images/header/order.png" alt="我的订单"> </a> <span>|</span> </li>
-                <li> <a href="#"> <img src="images/header/shop_car.png" alt="我的购物车"> </a><span>|</span> </li>
+                <!-- 文字,中线,底线,基线,上线 -->
+                <li> <a href="#">
+                        <img src="images/header/care.png" alt="收藏"> </a> <span>|</span> </li>
+                <li> <a href="#">
+                        <img src="images/header/order.png" alt="我的订单"> </a> <span>|</span> </li>
+                <li> <a href="#">
+                        <img src="images/header/shop_car.png" alt="我的购物车"> </a><span>|</span> </li>
                 <li> <a href="#">帮助 </a><span>|</span> </li>
                 <li> <a href="#">登录</a> </li>
             </ul>
         </div>
     </header>
     <!-- 头部结束 -->
+
+    <!--导航开始 -->
+    <nav class="nav center clearfloat">
+        <ul>
+            <li>
+                <a class="active" href="#">首页</a>
+            </li>
+            <li>
+                <a href="#">电脑办公</a>
+            </li>
+            <li>
+                <a href="#">办公文具</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- 导航结束 -->
+    <!-- banner图开始 -->
+
+    <div class="banner_box center">
+        <img src="../images/item/banner1.png" alt="">
+        <div class="leftear ">
+            <a href="#">
+                <img src="images/index/arrow-left.png" alt="">
+            </a>
+        </div>
+
+        <div class="rightear">
+            <a href="#">
+                <img src="images/index/arrow-right.png" alt="">
+            </a>
+        </div>
+        <div class="index_box ">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- banner图结束 -->
+    <!-- 电脑办公开始 -->
+    <div class="center computer_container">
+        <div class="title">
+            <img src="images/item/computer_icon.png" alt="">
+            <h3>办公电脑/1F</h3>
+        </div>
+        <div class="hot">
+
+        </div>
+    </div>
+    <!-- 电脑办公结束 -->
+
+
 </body>
 
 </html>

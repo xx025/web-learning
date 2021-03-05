@@ -19,8 +19,6 @@ li {
     list-style: none;
 }
 
-
-
 /* html,body的宽度等同于浏览器的宽度 */
 
 html, body {
@@ -66,14 +64,19 @@ html, body {
 }
 
 /* 左浮动 */
-.fl{
+
+.fl {
     float: left;
 }
+
 /* 左浮动 */
-.fr{
+
+.fr {
     float: right;
 }
+
 /* 去掉input的外边框 */
+
 input {
     outline: none;
     border: 0;

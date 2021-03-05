@@ -1,19 +1,14 @@
-div, header, body, .search {
-    background-color: rgb(247, 245, 142);
-    border: 1px;
-    /* width: 100px;
-    height: 100px; */
-}
-
 .header {
     padding-top: 20px;
     /* hearder上内边距 */
     position: fixed;
     /* width: 100%; */
-    height: 80px;
+    height: 60px;
     top: 0px;
     left: 0px;
     right: 0px;
+    z-index: 10;
+    background-color: RGB(245, 245, 245);
 }
 
 .header .search {
@@ -42,4 +37,135 @@ div, header, body, .search {
 .header .menu li {
     /* 标签左浮动 */
     float: left;
+    height: 36px;
+    width: 54px;
+    /* background-color: aqua; */
+    line-height: 36px;
+    font-size: 14px;
+    color: #808080;
+}
+
+.header .menu li a {
+    color: #808080;
+}
+
+.header .menu img {
+    /* 图片中线对齐 */
+    vertical-align: middle;
+}
+
+.header .menu span {
+    margin-left: 10px;
+}
+
+/* nav导航开始 */
+
+.nav {
+    margin-top: 100px;
+}
+
+.nav ul li a {
+    float: left;
+    margin-right: 35px;
+    font-size: 16px;
+    color: #808080;
+}
+
+.active {
+    color: #0aa1ed !important;
+}
+
+/* banner图 */
+
+.banner_box {
+    margin-top: 20px;
+    height: 400px;
+    position: relative;
+}
+
+.banner_box .leftear {
+    position: absolute;
+    top: 50%;
+    width: 35px;
+    height: 70px;
+    /* margin-top: -35px; */
+    /* 往上移 */
+    background-color: #000000;
+    border-radius: 2px;
+    opacity: 0.1;
+    left: 5px;
+}
+
+.banner_box .rightear {
+    position: absolute;
+    /* margin-top: -35px; */
+    top: 50%;
+    width: 35px;
+    height: 70px;
+    /* 往上移 */
+    background-color: #000000;
+    border-radius: 2px;
+    opacity: 0.1;
+    right: 5px;
+}
+
+.banner_box a {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.banner_box .index_box {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    margin-left: -50px;
+    width: 100px;
+    height: 12px;
+}
+
+.banner_box .index_box div {
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    background-color: rgb(248, 245, 240);
+    border-radius: 50%;
+}
+
+.banner_box .index_box div:hover {
+    background-color: #0aa1ed;
+}
+
+/* 电脑办公 */
+
+.computer_container {
+    height: 600px;
+}
+
+.computer_container .title {
+    margin-top: 25px;
+    height: 30px;
+    padding-bottom: 10px;
+    border-bottom: 10px solid #8a8686;
+}
+
+.computer_container .title h3, img {
+    float: left;
+}
+
+.computer_container .title img {
+    vertical-align: middle;
+    position: relative;
+    top: 5px;
+}
+
+.computer_container .title h3 {
+    font-size: 24px !important;
+    margin-left: 8px;
+    color: #666666;
+}
+
+.computer_container .hot {
+    margin-top: 10px;
 }
