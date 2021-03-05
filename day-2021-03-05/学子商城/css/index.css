@@ -147,7 +147,7 @@
     margin-top: 25px;
     height: 30px;
     padding-bottom: 10px;
-    border-bottom: 10px solid #8a8686;
+    border-bottom: 5px solid #e8e8e8;
 }
 
 .computer_container .title h3, img {
@@ -168,4 +168,30 @@
 
 .computer_container .hot {
     margin-top: 10px;
+}
+
+.computer_container .hot .hot1 {
+    float: left;
+    height: 375px;
+    width: 600px;
+    margin-right: 10px;
+    background-color: #e8e8e8;
+}
+
+.computer_container .hot .hot2 {
+    float: left;
+    height: 375px;
+    width: 390px;
+    background-color: #e8e8e8;
+}
+
+.computer_container .hot .hot1 .intro {
+    float: left;
+    width: 200px;
+    height: 222px;
+    background-color: #666666;
+}
+.computer_container .hot .hot1 .img {
+    float: right;
+    /* background-color: #666666; */
 }
