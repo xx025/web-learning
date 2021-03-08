@@ -12,6 +12,7 @@ web-learning
          1. 插件:	Live Server
       2. Chrome
       3. DeskPins
+      4. 在运行一些js文件时还需要Node.js
       
    2. 如何使用
    
