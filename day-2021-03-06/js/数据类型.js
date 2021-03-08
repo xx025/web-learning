@@ -51,6 +51,8 @@ console.log(typeof n1);//undefined
 
 /* 
 对象类型:
+    - 创建对象:new Object();
+    - 创建对象 {}
  */
 
 var o = new Object();
