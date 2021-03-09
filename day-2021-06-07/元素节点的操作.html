@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>这是一个p标签</p>
+<p class="demo">这是一个p标签</p>
+<p id="p">这是一个p标签</p>
+<div id="div1">
+
+</div>
+<script>
+    /*
+    * 元素节点的获取
+    *   返回元素节点
+    *       getElementById:根据id获取标签
+    *       querySelector:根据选择器获取,多个时取第一个
+    *   返回数组:
+    *       getElementsByTagName:根据标签名获取
+    *       getElementsByClassName:根据class获取
+    *
+    *   DOM树抽象出一个对象:document*/
+    let list = document.getElementsByTagName("p");
+    console.log(list);
+
+    let id = document.getElementById("p");
+    console.log(id);
+
+    let classP = document.getElementsByClassName("demo")
+    console.log(classP);
+
+    let idP2 = document.querySelector("p");
+    console.log(idP2);
+
+    let idP3 = document.querySelectorAll("p");
+    console.log(idP3);
+
+    /*
+    *   选中div节点
+    *   创建新的节点
+    *       createElement('标签名称')
+    *   将新的节点放到节点中去
+    *       appendChild(标签)
+    *       参数是节点,不能是字符串
+    *   元素节点的删除:
+    *       removeChild(标签);
+    *   元素节点替换:
+    *       .replaceChild(标签)
+    * */
+    let div = document.querySelector("#div1")
+    let h1 = document.createElement("h1");
+    let h2 = document.createElement("h2");
+    console.log(h1);
+    div.append(h1);
+    div.appendChild(h1);
+    // div.removeChild(h1);
+    div.replaceChild(h2, h1)
+
+    /*
+    *   文本节点:
+    *       innerHTML取出或者是设置元素节点的文本值
+    *       innerText取出或者是设置给元素节点的文本值
+    *       innerHTML是可以插入标签的,而innnerText不行
+    *
+    */
+    h2.innerHTML = "我是文本节点";
+    console.log(h2.innerHTML);
+    h2.innerText = "我是通过innerText赋值的";
+
+    console.log(h2.innerText);
+    div.innerHTML="<h4> 这里是h4<h4>"
+</script>
+
+
+</body>
+</html>
