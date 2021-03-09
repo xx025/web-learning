@@ -18,13 +18,42 @@
  -->
 
 <button>按钮</button>
+<a href="http://baidu.com">跳转百度</a>
 <script>
-    let btn=document.querySelector("button");
+    /*
+    *
+    *       事件的两种添加方式:
+    *           1. 属性的形式
+    *           2. addEventListener形式
+    *       区别:
+    *           属性的形式前后定义两个事件,后面会覆盖前面的
+    *           addEventListener形式定义事件会叠加
+    * */
+    let btn = document.querySelector("button");
     //属性的形式设置点击事件
-    btn.onclick=function () {
+    btn.onclick = function () {
         console.log("按钮被点击了哦(⊙o⊙)");
     }
+    btn.onclick = function () {
+        console.log("点击事件被重新定义了");
+    }
     // btn.addEventListener('事件的类型','处理方法')
+    btn.addEventListener("click", function () {
+        console.log(`btn.addEventListener形式的事件添加${Date()}`);
+    })
+
+    let a = document.querySelector('a');
+    a.onclick = function () {
+        console.log("a被点击了");
+        // return false;来阻止默认事件
+        console.log(this);
+        //this->指向绑定事件的标签
+        // return false;
+        //2. 使用阻止默认事件的方法
+        // this.preventDefault()
+
+    }
+
 </script>
 </body>
 </html>
