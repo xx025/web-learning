@@ -22,11 +22,22 @@
     let content = document.querySelector("#connent")
     let ul = document.querySelector("#fruit_list");
     addBtn.onclick = function () {
-        console.log(`按钮被点击了${Date()}`);
-        console.log(content.value);
+        // console.log(`按钮被点击了${Date()}`);
+        // console.log(content.value);
         let li = document.createElement('li');
         li.innerText = content.value;
         ul.appendChild(li)
+    }
+
+    /*
+    * 点击删除
+    * */
+    let list = document.querySelectorAll("#fruit_list li");
+    for (let listElement of list) {
+        console.log(listElement);
+        listElement.onclick = function () {
+            ul.removeChild(listElement);
+        }
     }
 </script>
 

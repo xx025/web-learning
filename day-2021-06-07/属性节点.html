@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .show {
+            width: 200px;
+
+        }
+    </style>
+</head>
+<body>
+<input type="text" value="value的值" id="input1">
+<h1 style="color: #40182C" id="h1">属性节点的值</h1>
+<h1></h1>
+<script>
+    /*
+    * 获取属性节点的值
+    **/
+    let input1 = document.querySelector("#input1");
+    let value = input1.value;
+    console.log(`input的value值是${value}`);
+    /*
+    * 设置属性值
+    */
+    input1.value = "更改后的值";
+
+    /*
+    * 设置元素的样式
+    * */
+    let h1 = document.querySelector("#h1");
+    h1.style.color = "red";
+
+
+    let div = document.querySelector("#div");
+    // div.class = "show";
+</script>
+</body>
+</html>

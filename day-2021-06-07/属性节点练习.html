@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+<div>
+    <img src="img/banner1.png" alt="">
+
+</div>
+<br>
+<div id="btn_box">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+</div>
+<script>
+    let btnList = document.querySelectorAll("#btn_box button")
+    console.log(btnList);
+    let img = document.querySelector("img");
+
+
+    for (let btn in btnList) {
+        let num = 1;
+        btnList[btn].onclick = function () {
+            num += 1;
+            // img.src = `img/banner${parseInt(btn) + 1}.png`;
+            img.src = `img/banner${num % 3 + 1}.png`;
+            // console.log(num);
+        }
+    }
+</script>
+</body>
+</html>

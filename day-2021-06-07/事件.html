@@ -17,8 +17,14 @@
         onmousemove:鼠标移动事件
  -->
 
-<h1>
-    hello
-</h1>
+<button>按钮</button>
+<script>
+    let btn=document.querySelector("button");
+    //属性的形式设置点击事件
+    btn.onclick=function () {
+        console.log("按钮被点击了哦(⊙o⊙)");
+    }
+    // btn.addEventListener('事件的类型','处理方法')
+</script>
 </body>
 </html>
