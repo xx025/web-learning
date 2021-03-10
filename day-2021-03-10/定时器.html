@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>
+    清除Interval
+</button>
+<script>
+    /*
+    *     setInterval(方法,时间):每隔一段时间执行一次
+    *           时间单位为毫秒
+    *       clearyInterval
+    * */
+    let seconds = 0;
+    let intal = setInterval(function () {
+        console.log(seconds++);
+
+    }, 1000)
+    let btn = document.querySelector("button");
+    btn.onclick = function () {
+        // intal.
+        clearInterval(intal);
+
+    }
+    setInterval(function () {
+        console.log(`的哈哈哈${Date()}`)
+        body = document.querySelector("body")
+        h1 = document.createElement("h1")
+        h1.innerText = "hello"
+        body.appendChild(h1)
+    }, 1000)
+
+    /*
+    * setTimeout(方法,时间):经过设定的时间后执行一次
+    * clearTimeout()
+    * */
+    setTimeout(function () {
+        console.log("五秒后跳转百度");
+        // location.href = "www.baidu.com"
+    }, 5000)
+
+</script>
+</body>
+</html>

@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        li:hover{
+           color: #0ca4ec;
+        }
+    </style>
 </head>
 <body>
 <input type="text" id="connent">
@@ -29,16 +34,25 @@
         ul.appendChild(li)
     }
 
+    // /*
+    // * 点击删除
+    // * */
+    // let list = document.querySelectorAll("#fruit_list li");
+    // for (let listElement of list) {
+    //     console.log(listElement);
+    //     listElement.onclick = function () {
+    //         ul.removeChild(listElement);
+    //     }
+    // }
+
     /*
-    * 点击删除
-    * */
-    let list = document.querySelectorAll("#fruit_list li");
-    for (let listElement of list) {
-        console.log(listElement);
-        listElement.onclick = function () {
-            ul.removeChild(listElement);
-        }
+    * 给ul加点击事件*/
+    ul.onclick = function (e) {
+        // console.log(e.target);
+        let li = e.target;
+        ul.removeChild(li);
     }
+
 </script>
 
 </body>

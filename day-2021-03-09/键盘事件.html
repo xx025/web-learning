@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*div {*/
+        /*    width: 400px;*/
+        /*    height: 200px;*/
+        /*    background-color: #1A1A2C;*/
+        /*}*/
+
+        img {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 100px;
+            height: 100px;
+            /*transform: rotate(0deg);*/
+        }
+    </style>
+</head>
+<body>
+<img src="img/未标题-1.gif" alt="">
+<!--<div>-->
+
+<!--</div>-->
+<script>
+    /*
+    * 键盘事件需要绑定到文档上或body上*/
+
+    let img = document.querySelector("img");
+    console.log(img.offsetLeft);
+    console.log(img.offsetTop);
+
+    document.onkeydown = function (e) {
+        console.log(e);
+        let keyCOde = e.keyCode;  //获取键位
+        let offSetLeft = img.offsetLeft;
+        let offSetTop = img.offsetTop;
+        let movex = 10;//按一次移动十个像素
+        switch (keyCOde) {
+            case 38:
+                img.style.top = (offSetTop - movex) + "px"
+                img.style.transform = "rotate(" +  270 + "deg)";
+                console.log("图片上移");
+                break;
+            case 39:
+                img.style.left = (offSetLeft + movex) + "px"
+                img.style.transform = "rotate(" +  0 + "deg)";
+                console.log("图片右移");
+                break;
+            case 40:
+                img.style.top = (offSetTop + movex) + "px"
+                img.style.transform = "rotate(" +  90 + "deg)";
+                console.log("图片下移");
+                break;
+            case 37:
+                img.style.left = (offSetLeft - movex) + "px"
+                img.style.transform = "rotate(" + 180 + "deg)";
+                console.log("图片左移");
+                break;
+        }
+    }
+</script>
+</body>
+</html>

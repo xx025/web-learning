@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <p>这是一个p标签1</p>
+    <p>这是一个p标签2</p>
+    <p>这是一个p标签3</p>
+    <p>这是一个p标签4</p>
+</div>
+<script>
+    /*
+    * 事件委托:
+    *   将事件委托给上层元素,然后通过target属性来操纵目标元素*/
+    let div = document.querySelector("div");
+    div.onclick = function (event) {
+        let p = event.target;
+        div.removeChild(p);
+    }
+</script>
+</body>
+</html>
