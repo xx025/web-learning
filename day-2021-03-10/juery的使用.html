@@ -11,15 +11,63 @@
 </head>
 <body>
 <h1>我是h1标签</h1>
+<h1>jjjj</h1>
 <h2 class="demo">我是h2标签</h2>
 <h2 id="demo">我是h2标签</h2>
 <h2>我是h2标签</h2>
+<button id="btn">这是一个弹窗</button>
+
+<p id="p1">这是一个p标签</p>
+
+<div id="div1">今天我很帅</div>
+
+<input type="text" value="输入点内容">
 <script>
     /*
     * jquery的选择器:选中指定的元素节点,同document.querySlector和document.querySlectorALL一样
     * */
     let h1 = $("h1")[0]
     console.log(h1);
+    $("h1").text("这是修改后的h1");
+    console.log($(".demo"));
+    console.log($("#demo"));
+    /*
+    *   jquery事件的写法
+    *       jquery对象.事件()
+    *       on的形式
+    *   jquery中的事件是叠加的
+    * */
+    $("#btn").click(function () {
+        alert("这是一个弹窗");
+    })
+    // $("#btn").on("事件","事件处理")
+
+    $("#btn").on("click", function () {
+        alert("这是另外一个弹窗")
+    })
+
+    $("#btn").click(function (e) {
+        e.preventDefault();
+        //阻止冒泡事件
+        e.stopPropagation();
+    })
+
+    /*
+    * 设置和获取文本元素
+    *   text(): text("值")
+    *       可以添加标签:html(): html("值")
+    *
+    *       获取到的是value的值val(): val("值")
+    * */
+    console.log($("#p1").text());
+    $("#p1").text("我是设置后的p标签");
+
+    console.log($("#div1").text());
+    $("#div1").html("<h1>今天我确实很帅</h1>");
+
+
+    console.log($("input").val());
+    $("input").val("你好");
 
 </script>
 </body>
