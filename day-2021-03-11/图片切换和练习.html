@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <img :src="image" alt="banner图">
+    <br>
+    <button @click="pre">上一张</button>
+    <button @click="next">下一张</button>
+</div>
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            image: "",
+            image_list: ["images/banner1.png",
+                "images/banner2.png",
+                "images/banner3.png"],
+            index: 0,
+        },
+        methods: {
+            pre: function () {
+                console.log("上一张");
+                this.index--;
+                this.image = this.image_list[this.index%3];
+            },
+            next: function () {
+                console.log("下一张");
+                this.index++;
+                this.image = this.image_list[this.index%3];
+
+            }
+        }
+    })
+</script>
+</body>
+</html>

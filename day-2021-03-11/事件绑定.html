@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<!--
+    事件
+        1. 绑定事件:
+            v-on:事件
+            @事件
+        2. 传递参数
+            @事件="方法(参数列表)"
+            @事件="方法(参数列表,$event)"
+            注意事项:参数列表中的字符串,应用引号括起来,否则使用到的是data中的数据
+        3. 事件修饰符
+            @事件.事件修饰符="方法(参数列表,$event)"
+            常用的事件修饰符:
+                .stop:阻止默认事件
+                .prevent:阻止默认事件
+                .once:事件一次性触发
+
+        -->
+<div id="app">
+    <button v-on:click="method1">点我弹窗</button>
+    <!--v-on简写@-->
+    <button @click="method1">点我弹窗111</button>
+    <button @click="method2('参数传递过去了')">点我传递参数</button>
+    <button @click="method2(参数传递过去了)">点我传递参数222</button>
+
+    <!--演示event-->
+    <button @click="method3($event)">传递时事件参数</button>
+    <a href="http://baidu.com/" @click.prevent="method4()">点我</a>
+    <br>
+    <a href="http://baidu.com/" @click.prevent="method4()">点我</a>
+</div>
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {},
+        methods: {
+            method1: function () {
+                alert("完了,中枪了");
+            },
+            method2: function (meaaage) {
+                alert(meaaage);
+
+            },
+            method3: function (event) {
+                console.log(event);
+                //    阻止冒泡事件
+                event.stopPropagation();
+                //    阻止默认事件
+                event.preventDefault();
+            },
+            method4: function () {
+                console.log("a标签被点击了");
+            }
+        },
+    })
+</script>
+</body>
+</html>
