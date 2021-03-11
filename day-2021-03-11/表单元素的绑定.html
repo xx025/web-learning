@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="js/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <!--输入框-->
+            <input type="text" v-model="name">
+            <!--密码框-->
+            <input type="password" v-model="password">
+            <br>
+            <!--radio-->
+            <label for="man">男</label><input id="man" type="radio" v-model="sex" value="man">
+            <label for="woman">女</label><input id="woman" type="radio" v-model="sex" value="women">
+
+
+            <!--
+                checkbox:
+                    checkbox的值是一个按钮
+                    checkbox默认选中是通过value和默认值相同选中的
+            -->
+            <br>
+            <label for="music">听音乐</label>
+            <input type="checkbox" id="music" value="music" v-model="hobbies">
+            <label for="football">踢足球</label>
+            <input type="checkbox" id="football" value="football" v-model="hobbies">
+            <label for="basketball">打篮球</label>
+            <input type="checkbox" id="basketball" value="basketball" v-model="hobbies">
+
+
+            <br>
+            <textarea v-model="intro" id="" cols="30" rows="10"></textarea>
+
+            <p> {{name}}</p>
+            <p>{{password}}</p>
+            <p>{{sex}}</p>
+            <p>{{hobbies}}</p>
+            <p>{{intro}}</p>
+
+        </div>
+        <script>
+
+            let vue = new Vue({
+                el: "#app",
+                data: {
+                    name: "",
+                    password: "",
+                    sex: "man",
+                    hobbies: [],
+                    intro:"dddd"
+                }
+            });
+        </script>
+    </body>
+</html>
