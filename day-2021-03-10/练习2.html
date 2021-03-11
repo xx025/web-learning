@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="js/jquery-3.6.0.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+<img src="images/banner1.png" alt="">
+<div id="btn_box">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <script>
+        /*
+        * $(btnList[i])将DOM对象转化为jquery对象
+        *   dom对象不具备jquery对象方法,所以要进行转化
+        * */
+        let btnList = $("#btn_box button")
+        let img = $("img")
+        for (let i = 0; i < btnList.length; i++) {
+            console.log(btnList[i]);
+            $(btnList[i]).click(function () {
+                console.log("ass");
+                img.attr("src", `images/banner${i + 1}.png`)
+
+            })
+
+        }
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    <style>
+        div {
+            background-color: #9d9b9f;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="text" id="input">
+    <button id="btn">添加</button>
+    <ul id="fruit_list">
+        <li>苹果</li>
+        <li>香蕉</li>
+    </ul>
+</div>
+
+<script>
+    let ul = $("#fruit_list");
+    $("#btn").click(function () {
+        //1. 获取input的值,并组装成li
+        //    2. 将li放入到ul中
+        let value = $("#input").val();
+        if (value != "") {
+            let li = `<li>${value}</li>`;
+            //将li放入到ul中
+            ul.append(li);
+            $("#input").val("")//添加后清空文本框
+        }
+
+    })
+    //删除
+    ul.click(
+        function (e) {
+            e.target.remove()
+        }
+    )
+</script>
+</body>
+</html>

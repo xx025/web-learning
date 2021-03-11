@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    <style>
+        .new {
+            width: 100px;
+            height: 100px;
+        }
+
+        img {
+            height: 200px;
+            width: 200px;
+        }
+
+        button{
+            position: fixed;
+            right: 2px;
+            top: 2px;
+        }
+    </style>
+</head>
+<body>
+<img src="images/banner1.png" alt="">
+
+<button>切换样式</button>
+
+<script>
+    /*
+    * 属性方法
+    * */
+    console.log($("img").attr("src"));
+    // $("img").attr("要修改的属性","属性值")
+    $("img").attr("src", "images/banner3.png")
+
+    /*
+    *
+    addClass()	向匹配的元素添加指定的类名。
+    attr()	设置或返回匹配元素的属性和值。
+    hasClass()	检查匹配的元素是否拥有指定的类。
+    html()	设置或返回匹配的元素集合中的 HTML 内容。
+    removeAttr()	从所有匹配的元素中移除指定的属性。
+    removeClass()	从所有匹配的元素中删除全部或者指定的类。
+    toggleClass()	从匹配的元素中添加或删除一个类。
+    val()	设置或返回匹配元素的值。
+    * */
+
+    // $("img").addClass("new");//添加类
+    // $("img").removeClass("new")//删除类
+
+
+    $("button").click(function () {
+        $("img").toggleClass("new");
+
+    })
+
+
+
+    /*
+    * 单独添加样式
+    * */
+    $("img").css("width","300px");
+    let width=$("img").css("width");
+    console.log(width);
+
+</script>
+</body>
+</html>
