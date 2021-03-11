@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<!--
+    1. 属性只有绑定的时候才与vue产生关系,取值才是vue data中的数据
+        若没有绑定,则写入什么值,就是什么值
+    2. 对象属性定义的时候,多个单词需要用引号引起来,如'aa-aa'
+    3. this:this对于对象来讲,this指代对象本身
+    4. vue是数据驱动元素节点
+-->
+<div id="app"><img :src="image" alt="">
+    <a :href="aaa">lian</a></div>
+
+
+</body>
+
+
+<script>
+    vue = new Vue(
+        {
+            el: "#app",
+            data: {
+                image: "images/banner1.png",
+                aaa: "http://baidu.com",
+                aaaaa: "xxx",
+                'aaa-aa': "xxxx",
+                是: "xxx"
+            }
+        }
+    )
+</script>
+</html>

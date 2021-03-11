@@ -16,7 +16,7 @@
     var vue = new Vue({
         el: "#app",
         data: {
-            image: "",
+            image: "images/banner1.png",
             image_list: ["images/banner1.png",
                 "images/banner2.png",
                 "images/banner3.png"],
@@ -25,13 +25,20 @@
         methods: {
             pre: function () {
                 console.log("上一张");
-                this.index--;
-                this.image = this.image_list[this.index%3];
+                if (this.index-- <= 0) {
+                    this.index = 2;
+                }
+                this.image = this.image_list[this.index % 3];
+                console.log(this.index);
             },
             next: function () {
                 console.log("下一张");
                 this.index++;
-                this.image = this.image_list[this.index%3];
+                if (this.index >= 3) {
+                    this.index = 0;
+                }
+                this.image = this.image_list[this.index % 3];
+                console.log(this.index);
 
             }
         }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        .class1 {
+            height: 100px;
+            width: 100px;
+            border: 1px solid #ff0000;
+        }
+
+        .class2 {
+            background-color: #0ca4ec;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <div :class="{class1:hasClass1,class2:hasClass2}">1</div>
+    <div>2</div>
+</div>
+<script>
+    /*
+    * 样式绑定:
+    *   对象样式:{样式:true|false,样式:ture|false}
+    *       若样式的值给的不是true|false,那么会先转布尔型再判断
+    * */
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            hasClass1: true,
+            hasClass2: true,
+        }
+    })
+</script>
+</body>
+</html>
