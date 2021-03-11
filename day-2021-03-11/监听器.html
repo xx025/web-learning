@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="js/vue.js"></script>
+    </head>
+    <body>
+        <!--
+        当发生改变只影响一个值的时候一般使用计算属性,
+        当发生多个值改变的时候一般使用监听器
+        -->
+        <div id="app">
+            <label>
+                <input type="text" v-model="action">
+            </label>
+            <p>{{means}}</p>
+        </div>
+        <script>
+            let vue = new Vue({
+                el: "#app",
+                data: {
+                    action: "",
+                    means: ""
+                },
+                watch: {
+                    action: function (newValue, oldValue) {
+                        if (newValue === "逃跑") {
+                            console.log("抓起来打一顿");
+                            this.means = "抓起来打一顿";
+                        } else {
+                            // console.l;
+                            this.means = "";
+                        }
+
+                    }
+                }
+            })
+        </script>
+
+    </body>
+</html>

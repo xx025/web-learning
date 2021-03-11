@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="js/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <label>
+                <input type="text" placeholder="请输入成就" v-model="score">
+                <p v-show="score>100||score<0" style="color: red">输入的成绩不合法</p>
+            </label>
+            <!--
+                v-if
+                    完整写法:v-if v-else-if v-else
+                 多个元素组合成一起进行判断的时候,可以进行template包裹
+
+                 v-if不符合条件的不会被渲染
+
+                 -->
+            <!--条件判断不能省略v-if-->
+            <h1 v-if="score>=85">优秀</h1>
+            <h1 v-else-if="score>=60">良好</h1>
+            <h1 v-else>不及格</h1>
+            <template v-if="score>=85">
+                <h1>优秀</h1>
+                <p>再接再厉</p>
+            </template>
+            <template v-else-if="score>=60">
+                <h1>良好</h1>
+                <p>再接dd再厉</p>
+            </template>
+            <template v-else>
+                <h1>优秀</h1>
+                <p>再接再cc厉</p>
+            </template>
+        </div>
+
+
+    </body>
+
+
+    <script>
+        let vue = new Vue({
+            el: "#app",
+            data: {
+                score: 0,
+            }
+        })
+    </script>
+</html>

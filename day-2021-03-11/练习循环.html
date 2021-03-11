@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="js/vue.js">
+        </script>
+    </head>
+    <body>
+        <div id="app">
+            <label>
+                <input type="text" v-model="fruit">
+            </label>
+            <button @click="add">添加水果</button>
+
+            <ul>
+                <li v-for="(f,index) in fruit_list" @click="del(index)">
+                    {{f}}
+                </li>
+            </ul>
+        </div>
+        <script>
+            let vue = new Vue({
+                    el: "#app",
+                    data: {
+                        fruit: "",
+                        fruit_list: ["香蕉🍌", "苹果🍎"]
+                    },
+                    methods: {
+                        add: function () {
+                            this.fruit_list.push(this.fruit)
+                        },
+                        del:function(index){
+                            console.log(index);
+                            this.fruit_list.splice(index,1);
+                        }
+                    }
+                }
+            )</script>
+    </body>
+</html>

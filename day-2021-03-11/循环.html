@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="js/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="(fruit,index) in fruits">{{index}}{{fruit}}</li>
+            </ul>
+
+            <h1 v-for="(value,prop) in person">{{prop}}:{{value}}</h1>
+            <h1 v-for="num in 10">{{ num }}</h1>
+        </div>
+
+        <!--数字循环从1开始-->
+
+
+        <script>
+            let vue = new Vue({
+                el: "#app",
+                data: {
+                    fruits: ["香蕉🍌", "苹果🍎", "橘子🍊"],
+                    person: {
+                        name: "张三",
+                        age: 18,
+                        sex: "🚹"
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
