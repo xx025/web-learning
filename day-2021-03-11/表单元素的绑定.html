@@ -34,11 +34,23 @@
             <br>
             <textarea v-model="intro" id="" cols="30" rows="10"></textarea>
 
-            <p> {{name}}</p>
-            <p>{{password}}</p>
-            <p>{{sex}}</p>
-            <p>{{hobbies}}</p>
-            <p>{{intro}}</p>
+
+            <br>
+            <!--下拉选-->
+            <select v-model="area">
+                <option value="山东"> 山东</option>
+                <option value="山西">山西</option>
+                <option value="北京">北京</option>
+                <option value="上海">上海</option>
+            </select>
+
+            <!--            <p> {{name}}</p>-->
+            <!--            <p>{{password}}</p>-->
+            <!--            <p>{{sex}}</p>-->
+            <!--            <p>{{hobbies}}</p>-->
+            <!--            <p>{{intro}}</p>-->
+            <p>{{area}}</p>
+
 
         </div>
         <script>
@@ -50,7 +62,8 @@
                     password: "",
                     sex: "man",
                     hobbies: [],
-                    intro:"dddd"
+                    intro: "dddd",
+                    area: "山东"
                 }
             });
         </script>
