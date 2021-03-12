@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <my_component>
+
+            </my_component>
+        </div>
+
+        <script>
+            // Vue.component("组件名称", "组件内部的定义");
+            Vue.component("my_component", {
+                data() {
+                    return {
+                        message: "这是一条消息"
+                    }
+                },
+                template: "<h1>{{message}}</h1>"
+            })
+            let vue = new Vue({
+                al: "app",
+            })
+        </script>
+    </body>
+</html>

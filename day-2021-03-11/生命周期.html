@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="js/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{message}}</h1>
+        </div>
+        <script>
+            let vue = new Vue({
+                el: "#app",
+                data: {
+                    message: ""
+                },
+                created: function () {
+                    console.log("xxxx");
+                    this.message = "我是从服务器请求过来的值";
+                    setTimeout(function () {
+                        console.log(this);
+                        // this.message = "我是从服务器请求过来的值";
+                    }, 500);
+
+                }
+            })
+        </script>
+    </body>
+</html>

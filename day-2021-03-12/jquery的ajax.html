@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script src="js/jquery-3.6.0.js"></script>
+    </head>
+    <body>
+        <p>访问的结果是:</p>
+        <h1 id="h1"></h1>
+        <script>
+            /*ajax方法*/
+            $.ajax({
+                url: "http://localhost:8080/teacher/getTeachers",
+                type: "get",/*请求方式*/
+                data: {},//请求参数
+                dataType: "json",//json
+                //    成功后的返回
+                success: function (result) {
+                    console.log(result);
+                    console.log(result.code);
+                    console.log(result.result);
+                    $("#h1").text(result.message);
+                },
+                error: function (result) {
+                    console.log(result);
+                }
+            });
+
+        </script>
+    </body>
+</html>
