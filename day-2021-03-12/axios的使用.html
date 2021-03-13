@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+<button id="btn">获取教师列表</button>
+<script>
+    /*1. 定义按钮事件
+    * */
+    let btn=document.querySelector("#btn");
+
+
+    btn.onclick=function () {
+    //    发送请求
+        axios({
+            method:"get",
+            url:"http://localhost:8080/teacher/getTeachers",
+            data:{}
+        })
+    console.log("1111");
+    }
+
+</script>
+</body>
+</html>
