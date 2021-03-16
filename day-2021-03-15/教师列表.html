@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://lib.baomitu.com/jquery/3.6.0/jquery.js"></script>
+    <title>Document</title>
+    <style>
+        td,
+        th {
+            width: 150px;
+            height: 40px;
+            border: 1px solid black;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        table {
+            /* 合并边框 */
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="btn">加载数据</button>
+    <button id="add">插入数据</button>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>姓名</th>
+                <th>手机号</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+    </table>
+
+    <script>
+        // 文档加载完成后执行这个方法
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                // 1. 访问服务器
+                $.ajax({
+                    url: "http://localhost:8080/teacher/getTeachers",
+                    type: "get",
+                    data: {},
+                    dataType: "json",
+                    success: function (r) {
+                        // 2.处理数据，将数据添加到表格中去
+                        if (r.code == 200) {
+                            let teachers = r.result;
+                            for (let i = 0; i < teachers.length; i++) {
+                                let teacher = teachers[i];
+                                let tr = `<tr>
+                                          <td>${teacher.id}</td>
+                                          <td>${teacher.name}</td>
+                                          <td>${teacher.mobile}</td>
+                                          <td>${teacher.sex == 1 ? '男' : '女'}</td>
+                                          <td>
+                                              <button onclick="delTeacher(${teacher.id})">删除</button>
+                                          </td>  
+                                      </tr>`;
+                                $("tbody").append(tr);
+                            }
+                        } else {
+                            console.log(r.message);
+                        }
+                    }
+                });
+            });
+        });
+
+
+
+        /* 删除老师的方法 */
+        function delTeacher(t_id) {
+            let r = window.confirm("你确定要删除该老师吗？");
+            $.ajax({
+                url: "http://localhost:8080/teacher/deleteTeacher",
+                type: "post",
+                data: {id: t_id},
+                dataType: "json",
+                success: function(r) {
+                    if (r.code == 200) {
+                        alert(r.message);
+                        // 加载数据
+                    } else {
+                        console.log(r.message);
+                    }
+                }
+
+            });
+        }
+
+    </script>
+
+
+</body>
+
+</html>

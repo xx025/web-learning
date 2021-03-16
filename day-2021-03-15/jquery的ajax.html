@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://lib.baomitu.com/jquery/3.6.0/jquery.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p>访问的结果是:</p>
+    <h1 id="h1"></h1>
+    <script>
+        // ajax方法
+        $.ajax({
+            url: "http://localhost:8080/teacher/getTeachers",
+            type: "get", // 请求方式
+            data: {}, // 请求参数
+            dataType: "json", // json
+            /*
+                "{
+                    key: "xxx",
+                    xxx: xxx,
+                    object: {},
+                    array: []
+
+                }"
+            */ 
+            // 成功后的返回
+            success: function(result) {
+                console.log(result);
+                console.log(result.code);
+                console.log(result.result);
+                $("#h1").text(result.message);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        }); 
+
+        $.get(url, function(result){})
+        $.post();
+
+    </script>
+
+
+</body>
+</html>

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-    <script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.15.0/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui@2.15.1/lib/index.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.1/lib/theme-chalk/index.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
@@ -35,41 +35,39 @@
                     label="性别">
             </el-table-column>
         </el-table>
+
+
     </template>
 
-
-    <script>
-        let vue = new Vue({
-            el: "#app",
-            data: {
-                teachers: [],
-
-            },
-            created:function () {
-                //执行初始化操作
-                this.getTeachers();
-            },
-            methods: {
-                getTeachers: function () {
-                    let v = this;
-                    //获取教师的列表
-
-
-
-
-                    axios({
-                        method: "get",
-                        url: "http://localhost:8080/teacher/getTeachers",
-                        data: {}
-                    }).then(function (reponse) {
-                        if (reponse.data.code == 200) {
-                            v.teachers = reponse.data.result;
-                        }
-                    })
-                }
-            }
-        })
-    </script>
 </div>
+
+<script>
+    let vue = new Vue({
+        el: "#app",
+        data: {
+            teachers: [],
+
+        },
+        created:function () {
+            //执行初始化操作
+            this.getTeachers();
+        },
+        methods: {
+            getTeachers: function () {
+                let v = this;
+                //获取教师的列表
+                axios({
+                    method: "get",
+                    url: "http://localhost:8080/teacher/getTeachers",
+                    data: {}
+                }).then(function (reponse) {
+                    if (reponse.data.code == 200) {
+                        v.teachers = reponse.data.result;
+                    }
+                })
+            }
+        }
+    })
+</script>
 </body>
 </html>
