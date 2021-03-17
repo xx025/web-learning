@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 对象转换json
+        // JSON.stringify(对象);
+        let student = {
+            name: "小明",
+            age: 18,
+        };
+        console.log(typeof student);//Object
+        window.sessionStorage.setItem("student", student);
+        let studentStr = JSON.stringify(student);
+        console.log(typeof studentStr);
+        window.sessionStorage.setItem("studentStr", studentStr);
+
+
+        //获取学生姓名
+        // console.log(studentStr.name);//获取不到
+
+        // 将字符串(JSON)转换成对象,再取用
+        //JSON.parse(字符串)
+        let student1
+
+    </script>
+</body>
+
+</html>
+
