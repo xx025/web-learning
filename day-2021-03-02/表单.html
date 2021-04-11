@@ -19,7 +19,7 @@
                     1. 提交参数不同,get是拼接到url中
                     2. 提交参数的大小不一样,get只能提交200K左右,post无限制
         表单元素:
-            input:提交到后台的标识
+            name:提交到后台的标识
             value:参数
             placeholder:文本提示
             disabled:禁用输入框
@@ -43,13 +43,6 @@
             表单元素都不独占一行        
             
      -->
-    <!-- 
-        action:请求的地址
-        method:请求提交的方式
-            get:将参数拼接在url中,get请求的大小是有限制的,限制在200kb左右
-            post:将参数隐藏起来
-        
-    -->
     <form action="" style="text-align: center;">
 
         <!-- 
@@ -61,7 +54,7 @@
 
         <input type="text" placeholder="请输入用户名" value="张三" name="usename">
         <br>
-        <input type="text" placeholder="请输入身份证号" value="11111" name="id">
+        <input type="text" placeholder="请输入身份证号" disabled value="11111" name="id">
         <br>
         <input type="password" placeholder="请输入密码" value="11111" name="password">
         <br>
@@ -90,7 +83,7 @@
         <label for="game">游戏</label>
 
         <br>
-        <select name="area" id="">
+        <select name="area" >
             <option value="">请选择省份</option>
             <option value="陕西">陕西省</option>
             <option value="山东" selected>山东省</option>
@@ -99,10 +92,10 @@
         <br>
         <br>
         <!-- 
-            texterea:文本域
+            textarea:文本域
                 cols:文本域的宽度
                 rows:文本域的高度
-                默认值:没有value值,直接卸载标签中即可
+                默认值:没有value值,直接写在标签中即可
         -->
         <textarea name="test" id="test" cols="30" rows="10">cccccccccc</textarea>
         <br>

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
         /*flex布局:是对父容器设置display:felx,这样会改变里面元素的排列方式
             justify-content:设置内部元素横轴的排列方式
-                felx-satrt:最左边
+                flex-start:最左边
                 flex-center:中间排列
-                felx-right:中间排列
+                felx-right:靠右排列
                 space-around:元素均分横轴
-                space-between:左右两边沾满,剩余空间均分
-            felx-wrap:元素换行
+                space-between:左右两边占满,剩余空间均分
+            flex-wrap:元素换行
             flex-direction:横竖轴交换
             align-items:纵轴的位置
                 felx-satrt:最上边排列
@@ -26,8 +27,10 @@
             width: 600px;
             height: 600px;
             background-color: antiquewhite;
-            display: flex; /*设置flex布局*/
-            justify-content: center; /*横轴排列位置*/
+            display: flex;
+            /*设置flex布局*/
+            justify-content: center;
+            /*横轴排列位置*/
 
             /*    换行设置*/
             /*    flex-wrap: wrap-reverse;*/
@@ -62,13 +65,15 @@
         }
     </style>
 </head>
+
 <body>
-<!--演示flex布局-->
-<div class="div_box">
-    <div class="div1"></div>
-    <div class="div2"></div>
-    <div class="div3"></div>
-    <div class="div4"></div>
-</div>
+    <!--演示flex布局-->
+    <div class="div_box">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+    </div>
 </body>
+
 </html>

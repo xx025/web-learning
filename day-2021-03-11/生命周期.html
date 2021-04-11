@@ -17,11 +17,11 @@
                 },
                 created: function () {
                     console.log("xxxx");
-                    this.message = "我是从服务器请求过来的值";
+                    this.message = "的值";
                     setTimeout(function () {
                         console.log(this);
-                        // this.message = "我是从服务器请求过来的值";
-                    }, 500);
+                        vue.message = "我是从服务器请求过来的值";
+                    }, 2000);
 
                 }
             })

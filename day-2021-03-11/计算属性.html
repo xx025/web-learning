@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-        <script src="js/vue.js"></script>
-    </head>
-    <body>
-        <div id="app">
-            <intput v-bind="first_name"></intput>
-            <intput v-bind="last_name"></intput>
-            <intput v-bind="age"></intput>
 
-            <p>{{name}}</p>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
 
-        </div>
-        <script>
-            let vue = new Vue({
-                el: "#app",
-                data: {
-                    first_name: "",
-                    last_name: "",
-                    age: 18,
-                },
-                computed: {
-                    // name: function () {
-                    //     return this.first_name + this.last_name;
-                    // }
-                    name: {
-                        get: function () {
-                            return this.first_name + this.last_name;
-                        },
-                        set: function () {
-                            //
-                        }
+<body>
+    <div id="app">
+        <intput v-bind="first_name"></intput>
+        <intput v-bind="last_name"></intput>
+        <intput v-bind="age"></intput>
 
+        <p>{{name}}</p>
+
+    </div>
+    <script>
+        let vue = new Vue({
+            el: "#app",
+            data: {
+                first_name: "",
+                last_name: "",
+                age: 18,
+            },
+            computed: {
+                // name: function () {
+                //     return this.first_name + this.last_name;
+                // }
+                name: {
+                    get: function () {
+                        return this.first_name + this.last_name;
+                    },
+                    set: function () {
+                        // this.firstName = "firstName";
+                        // this.lastName = "lastName"
                     }
-                }
-            })
 
-        </script>
-    </body>
+                }
+            }
+        })
+
+    </script>
+</body>
+
 </html>
