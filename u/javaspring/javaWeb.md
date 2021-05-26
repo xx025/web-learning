@@ -602,7 +602,7 @@ Java大数据
      | V    | View视图层       | JSP技术(html css..)WebRoot下                                 |
      | C    | Controller控制层 | Servlet技术  com.lddx.web                                    |
 
-7.  JSP中的隐含/隐式对象
+7. JSP中的隐含/隐式对象
 
    - 可以不需要在JSP中预先定义就可以直接使用，共9个隐含对象：
 
@@ -624,11 +624,47 @@ Java大数据
 
       2. 作为域对象存取值
 
+         ```jsp
+         <!-- 1）获得请求参数 -->
+         id:<%=request.getParameter("id")%>
+         <br/>
+         name:<%out.println(request.getParameter("name"));%>
+         
+         <hr/>
+         <!-- 2）作为域对象存取值 -->
+         <%
+             request.setAttribute("age",100);
+             request.getRequestDispatcher("MyJsp03.jsp")
+                   .forward(request, response);
+         %>
+         ```
+
       3. 获取Cookie对象
+
+         ```jsp
+         <!-- 使用隐含对象request获取Cookie -->
+         <%
+         Cookie[] cs=request.getCookies();
+         for(Cookie c:cs){
+             out.println(c.getName()+","+URLDecoder.decode(c.getValue(),"utf-8") +"<br/>");
+         }
+         %>
+         ```
 
    2. response隐含对象
 
       1. 重定向
+
+         ```jsp
+         <!-- 1）重定向 -->
+         <%
+         //response.sendRedirect("index.jsp");
+         //重定向到ems_jsp应用的list首页
+         //response.sendRedirect("/ems_jsp/list");
+         //重定向百度首页
+         response.sendRedirect("http://www.baidu.com");
+         %>
+         ```
 
       2. 处理HTTP文件头
 
@@ -838,16 +874,50 @@ Java大数据
 
          - 实现多种分支情况的判断，类似于java代码中If…else if else if…else的语句结构。
 
+         ```jsp
+         		<!-- 使用c:set标签往域对象中设置属性值 -->
+         		<c:set var="day" value="3" scope="page"></c:set>
+         		${day}
+         		<br/>
+         		<!-- 使用c:choose进行多种情况的判断 -->
+         		<c:choose>
+         			<c:when test="${day==1}">
+         			       今天是星期一，堵上各种堵车
+         			</c:when>
+         			<c:when test="${day==2}">
+         				今天是星期二，还有4天休息
+         			</c:when>	
+         			<c:otherwise>
+         			       啥也不是
+         			</c:otherwise>	
+         		</c:choose>
+         ```
+      
+         
+      
       6. `<c:forEach>`标签：循环
-
+      
          ​     对集合中的数据进行循环迭代操作；
-
+      
          ​      指定循环次数反复执行的操作；
-
-         ​      **练习：遍历10到100的偶数，如果数字所在的位置是3的倍数，显示成红色的。**
-
+      
+            - **练习：遍历10到100的偶数，如果数字所在的位置是3的倍数，显示成红色的。**
+      
+              ```jsp
+              <!-- 练习：遍历10到100的偶数，
+              如果数字所在的位置是3的倍数，显示成红色的。 -->
+              <c:forEach begin="10" end="100" step="2" var="i" varStatus="status">
+                  <c:if test="${status.count%3==0}" var="f" scope="page">
+                      <span style="color:red">${i}</span>
+                  </c:if>
+                  <c:if test="${!f}">
+                      ${i}
+                  </c:if>
+              </c:forEach>
+              ```
+      
       7. `<c:forTokens>`标签
-
+      
          用来浏览一字符串中所有的成员，其成员由定义符号所分隔。
 
 10. Servlet过滤器

@@ -652,6 +652,55 @@ JavaWeb（Servlet+JSP(el jstl)）
    - 配置方法
      - `<aop:after method=””>`
    - 说明：后置通知可以通过配置returning=””得到返回值，而最终通知无法得到。
+   
+   
+   
+   ```xml
+   <?xml version="1.0" encoding="UTF-8"?>
+   <beans>
+   
+   	<!-- 开启全包扫描 -->
+   	<context:component-scan base-package="com.lddx"></context:component-scan>
+   
+   	<!-- 配置注解方式DI -->
+   	<context:annotation-config></context:annotation-config>
+   
+   	<!-- 使用AOP配置切面和通知 -->
+   	<aop:config>
+   		<aop:pointcut id="pc01" expression="execution(* com.lddx.service..*(..))" />
+   		<!-- 配置切面  ref=""表示要配置切面的id -->
+   		<aop:aspect ref="firstAspect">
+   			<!-- 配置通知  method=""哪个通知
+   			     pointcut=""切入点表达式
+   			         切入点表达式+连接点=切入点
+   			         切入点决定对哪个目标对象和目标方法进行功能的增强
+   			-->
+   			<aop:before method="before" pointcut="execution(* com.lddx.service..*(..))" />
+   			<aop:around method="around" pointcut="execution(* com.lddx.service..*(..))" />
+   			<aop:after-returning method="afterReturning" pointcut-ref="pc01" returning="retObj" />
+   			<aop:after-throwing method="afterThrowing" pointcut-ref="pc01" throwing="e" />
+   			<aop:after method="after" pointcut-ref="pc01" />
+   		</aop:aspect>
+   		<aop:aspect ref="secondAspect">
+   			<!-- 配置通知  method=""哪个通知
+   			     pointcut=""切入点表达式
+   			         切入点表达式+连接点=切入点
+   			         切入点决定对哪个目标对象和目标方法进行功能的增强
+   			-->
+   			<aop:before method="before" pointcut="execution(* com.lddx.service..*(..))" />
+   			<aop:around method="around" pointcut="execution(* com.lddx.service..*(..))" />
+   			<aop:after-returning method="afterReturning" pointcut-ref="pc01" returning="retObj" />
+   			<aop:after-throwing method="afterThrowing" pointcut-ref="pc01" throwing="e" />
+   			<aop:after method="after" pointcut-ref="pc01" />
+   		</aop:aspect>
+   	</aop:config>
+   
+   </beans>
+   ```
+   
+   
+   
+   
 
 ### 六、五大通知的执行顺序
 
@@ -680,8 +729,64 @@ JavaWeb（Servlet+JSP(el jstl)）
 2. AOP的注解方式的实现
 
    Spring也支持注解的方式实现aop,相对于配置文件的方式，注解更轻量级，配置和修改更简单，目前最受欢迎。
-
-
+   
+   ```java
+   //切面  -- 切面类
+   //new FirstAspect();
+   //<bean id="firstAspect" class="com.lddx.aspect.FirstAspect" />
+   @Component
+   //<aop:aspect ref="firstAspect"/>
+   @Aspect
+   public class FirstAspect {
+   	
+   	//随便定义个方法
+   	//<aop:pointcut  id="mx"
+   	//expression="execution(* com.lddx.service..*(..))" />
+   	@Pointcut("execution(* com.lddx.service..*(..))")
+   	public void mx(){
+   		
+   	}
+   	//前置通知
+   	//<aop:before method="before" pointcut="execution(* com..."/>
+   	@Before("mx()")
+   	public void before(){
+   		System.out.println("first...前置通知...");
+   	}
+   	
+   	//环绕通知
+   	//<aop:around method="" pointcut=""/>
+   	@Around("execution(* com.lddx.service..*(..))")
+   	public Object around(ProceedingJoinPoint pjp) throws Throwable{
+   		System.out.println("first...环绕通知...前");
+   		Object obj=pjp.proceed(); //执行目标方法
+   		System.out.println("first...环绕通知...后");
+   		return obj;
+   	}
+   	
+   	//后置通知
+   	//<aop:after-returning method="" />
+   	@AfterReturning(value="execution(* com.lddx.service..*(..))",returning="obj")
+   	public void afterReturning(Object obj){
+   		System.out.println("first...后置通知..."+obj);
+   	}
+   	
+   	//异常通知
+   	@AfterThrowing(value="execution(* com.lddx.service..*(..))",throwing="e")
+   	public void afterThrowing(Throwable e){
+   		System.out.println("first...异常通知..."+e);
+   	}
+   	
+   	//最终通知
+   	@After("execution(* com.lddx.service..*(..))")
+   	public void after(){
+   		System.out.println("first...最终通知...");
+   	}
+   	
+   	
+   }
+   ```
+   
+   
 
 ## Spring 框架
 
