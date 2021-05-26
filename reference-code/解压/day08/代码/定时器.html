@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>清除定时器</button>
+
+    <script>
+
+        /*
+            setInterval:每隔设置定时间执行一次
+            setInterval(方法,时间);
+                时间单位是毫秒
+            clearInterval(定时器)
+        */
+        // let seconds = 0;
+        // let interval = setInterval(function () {
+        //     console.log(seconds++);
+        // }, 1000);
+
+        // let btn = document.querySelector("button");
+        // btn.onclick = function () {
+        //     // 清除定时器
+        //     clearInterval(interval);
+        // }
+
+        /*
+            setTimeout:经过设置的时间后执行一次
+            setTimeout(方法, 时间)
+            clearTimeout(定时器)
+        */ 
+        
+        let timeout = setTimeout(function() {
+            // 跳转百度
+            console.log("5秒后跳转百度");
+            location.href = "http://www.baidu.com";
+        }, 5000);
+        
+        let btn = document.querySelector("button");
+        btn.onclick = function () {
+            // 清除定时器
+            clearTimeout(timeout);
+        }
+
+    </script>
+
+
+</body>
+
+</html>

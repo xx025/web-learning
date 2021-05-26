@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <style>
+        .new {
+            width: 200px;
+            height: 200px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <img src="images/banner1.png" alt="banner图">
+    <button>切换样式</button>
+    <script>
+        /*
+            属性修改
+        */ 
+        // 取用
+        let src = $("img").attr("src");
+        console.log(src);
+
+        // $("img").attr("要修改的属性", "属性值");
+        $("img").attr("src", "images/banner3.png");
+
+        /*
+            addClass() - 向被选元素添加一个或多个类
+            removeClass() - 从被选元素删除一个或多个类
+            toggleClass() - 对被选元素进行添加/删除类的切换操作
+            css() - 设置或返回样式属性
+        */
+        // 添加类  
+        // $("img").addClass("new");
+        // $("img").removeClass("new");
+        // $("button").click(function(){
+        //     $("img").toggleClass("new");
+        // });
+            
+        // 单独添加样式
+        $("img").css("width", "300px");
+        let width = $("img").css("width");
+        console.log(width);
+
+
+
+
+    </script>
+
+
+</body>
+</html>

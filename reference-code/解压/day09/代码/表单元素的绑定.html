@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        表单元素的绑定：
+            通过：v-model进行绑定
+            带有选中效果的表单元素，如radio、checkbox、select，
+                那么是通过v-model绑定的默认确定的
+     -->
+
+    <div id="app">
+        <!-- 输入框 -->
+        <input type="text" v-model="name">
+        <!-- 密码框 -->
+        <input type="password" v-model="password">
+        <br>
+        <!-- 
+            radio:v-model相同才能形式互斥
+            默认选中:v-model值与value值相同的radio选中
+        -->
+        <input id="man" type="radio" v-model="sex" value="man">
+        <label for="man">男</label>
+        <input id="woman" type="radio" v-model="sex" value="woman">
+        <label for="woman">女</label>
+        <br>
+        <!-- 
+            checkbox:
+                checkbox的值是一个数组
+                checkbox默认选中是通过value和默认值相同选中的
+         -->
+         <input value="music" v-model="hobbies" type="checkbox" id="music">
+         <label for="music">听音乐</label>
+         <input value="football" v-model="hobbies" type="checkbox" id="football">
+         <label for="football">踢足球</label>
+         <input value="basketball" v-model="hobbies" type="checkbox" id="basketball">
+         <label for="basketball">打篮球</label>
+         <br>
+         <!-- textarea -->
+         <textarea v-model="intro" cols="30" rows="10"></textarea>
+         <br>
+         <!-- 下拉选 -->
+         <select v-model="area">
+            <option value="山东">山东</option>
+            <option value="山西">山西</option>
+            <option value="北京">北京</option>
+            <option value="上海">上海</option>
+         </select>
+
+        <p>{{ name }}</p>
+        <p>{{ password }}</p>
+        <p>{{ sex }}</p>
+        <p>{{ hobbies }}</p>
+        <p>{{ intro }}</p>
+        <p>{{ area }}</p>
+    </div>
+
+    <script>
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                name: "",
+                password:"",
+                sex:"man",
+                hobbies:["music"],
+                intro: "xxxxxxxxx",
+                area: "上海"
+            }
+
+        });
+
+    </script>
+
+    
+</body>
+</html>

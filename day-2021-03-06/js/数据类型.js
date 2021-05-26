@@ -11,8 +11,6 @@ var b = 123.123;
 console.log(Number.MAX_VALUE + 1);
 console.log(Number.MIN_VALUE - 1);
 console.log(Number.MIN_VALUE + Number.MIN_VALUE);
-
-
 var c = "abc";
 var d = a * c;
 console.log(d)

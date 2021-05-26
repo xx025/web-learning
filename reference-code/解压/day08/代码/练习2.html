@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/banner1.png" alt="banner图">
+    <div id="btn_box">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+    </div>
+
+    <script>
+
+        /*
+            $(btnList[i]):将dom对象转化成jquery对象
+                dom对象不具备jquery的方法，所以要进行转化
+
+        */
+        let btnList = $("#btn_box button");
+        let img = $("img");
+        for (let i=0; i<btnList.length; i++) {
+            // 给按钮绑定事件
+            // btnList[i].onclick = function(){};
+            // console.log(btnList[i]);
+            // console.log($(btnList[i]));
+            $(btnList[i]).click(function(){
+                // 切换图片
+                img.attr("src", `images/banner${i+1}.png`);
+            });
+        }
+
+    </script>
+
+
+</body>
+</html>

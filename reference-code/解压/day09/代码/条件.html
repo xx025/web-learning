@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        v-if
+            完整写法:v-if  v-else-if  v-else
+            多个元素组合成一起进行判断的时候，
+                可以使用template进行包裹判断
+            v-if不符合条件的不会被浏览器渲染
+            注意事项:条件判断不能省略v-if
+        v-show
+            实现元素标签的隐藏与显示，与v-if不同的是，
+                浏览器会渲染标签，通过display来进行显示和隐藏的控制
+     -->
+     <!-- 
+        85+:优秀
+        60-85:良好
+        60-:不及格
+    -->
+
+    <div id="app">
+        <input v-model="score" type="text" placeholder="请输入成绩">
+        <!-- 条件判断不能省略v-if -->
+        <!-- <h1 v-if="score >= 85">优秀</h1>
+        <h1 v-else-if="score >= 60">良好</h1>
+        <h1 v-else>不及格</h1> -->
+
+        <!-- template -->
+        <template v-if="score >= 85">
+            <h1>优秀</h1>
+            <p>再接再厉</p>
+        </template>
+        <template v-else-if="score >= 60">
+            <h1>良好</h1>
+            <p>再接再厉</p>
+        </template>
+        <template v-else>
+            <h1>不及格</h1>
+            <p>再接再厉</p>
+        </template>
+
+        <h1 v-show="score > 100">输入的成绩不合法</h1>
+        
+    </div>
+
+    <script>
+        var vue = new Vue({
+           el: "#app",
+           data: {
+               score: 0
+           }
+            
+
+        });
+
+    </script>
+
+
+
+
+    
+</body>
+</html>

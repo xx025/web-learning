@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            /* display: none; */
+            background-color: blanchedalmond;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>点我显示或隐藏</h1>
+    <div></div> 
+    <h1>我在后面</h1>
+    <script>
+        /*
+            // 显示show();
+            // 隐藏hide();
+            // 显示或者隐藏toggle();
+            隐藏后的元素是不占位置的，效果同display:none
+        */
+        let div = $("div");
+        $("h1").click(function() {
+            // 显示
+            // div.show();
+            // 隐藏
+            // div.hide();
+            // 显示或者隐藏
+            div.toggle('slow', function() {
+                console.log("这个方法被执行了");
+            });
+        });
+
+    </script>
+
+</body>
+</html>

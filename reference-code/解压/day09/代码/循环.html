@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <ul>
+            <!-- <li v-for="fruit in fruits">{{ fruit }}</li> -->
+            <!-- <li v-for="(fruit, index) in fruits">
+                {{index+1}}----{{ fruit }}
+            </li> -->
+            <li v-for="(value, prop) in person">
+                {{ prop }}:{{ value }}
+            </li>
+        </ul>
+
+        <!-- 数字循环是从1开始的 -->
+        <h1 v-for="num in 10">{{ num }}.h1标签</h1>
+
+    </div>
+
+    <script>
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                fruits: ["苹果", "香蕉", "橘子"],
+                person: {
+                    name: "张三",
+                    age: 18,
+                    sex: "男"
+                }
+
+
+
+            }
+        });
+    </script>
+
+
+    
+</body>
+</html>

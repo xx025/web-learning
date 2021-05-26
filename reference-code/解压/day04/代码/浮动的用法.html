@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .div1 {
+            width: 400px;
+            height: 400px;
+            background-color: antiquewhite;
+        }
+
+        .div2, .div3 {
+            width: 100px;
+            height: 100px;
+            float: right;
+        }
+
+        .div2 {
+            background-color: aqua;
+        }
+
+        .div3 {
+            background-color: chartreuse;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!--
+        浮动用法：
+            float:left|right;
+        浮动停止：
+            1.碰触到父元素的边框后停止
+            2.碰触到浮动元素的边框后停止
+        浮动的特点:
+            浮动后元素表现为行内块元素的特点
+    -->
+    <div class="div1">
+        <div class="div2">1</div>
+        <div class="div3">2</div>
+    </div>
+
+</body>
+</html>

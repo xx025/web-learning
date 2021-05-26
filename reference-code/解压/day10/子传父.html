@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <my_component v-on:show-msg="show"></my_component>
+        <h1>{{ msg }}</h1>
+    </div>
+
+    <script>
+        Vue.component("my_component", {
+            methods: {
+                sendMsg: function() {
+                    // console.log("方法被触发了");
+                    this.$emit("show-msg", ["这是一条消息"]);
+                }
+            },
+            template: "<button @click='sendMsg'>向页面传值</button>"
+        });
+
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                msg: "",
+            },
+            methods: {
+                show: function(d) {
+                    this.msg = d[0];
+                }
+            }
+        });
+
+    </script>
+
+    
+</body>
+</html>

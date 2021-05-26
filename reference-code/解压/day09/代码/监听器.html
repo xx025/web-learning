@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+        当反生改变只影响一个值的时候一般使用计算属性，性能好一些
+        当反生改变影响多个值的时候一般使用侦听器
+     -->
+
+    <div id="app">
+        <input type="text" v-model="action">
+    </div>
+
+    <script>
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                action: ""
+            },
+            watch: {
+                action: function(newVlaue, oldValue){
+                    console.log(newVlaue);
+                    if (newVlaue == "逃跑") {
+                        console.log("抓起来，打一顿");
+                    }
+                }               
+            }
+        });
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+    <style> 
+        .class1 {
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+        }
+
+        .class2 {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <div :class="{class1:hasClass1, class2:hasClass2}">1</div>
+        <div :class="[style1, style2]">2</div>
+        <div :class="[hasClass1?style1:'', style2]">3</div>
+    </div>
+
+    <script>
+        /*
+            样式绑定:
+                对象形式:{样式:true|false, 样式:true|false}
+                    若样式的值给的并不是true|false，那么会先转布尔类型，再判断
+                数组形式:
+                    [样式1, 样式2]
+                    [条件?样式1:"", 样式2]
+
+        */ 
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                hasClass1: true,
+                hasClass2: 11,
+                style1: "class1",
+                style2: "class2"
+            }
+
+            
+        });
+
+    </script>
+
+
+</body>
+</html>

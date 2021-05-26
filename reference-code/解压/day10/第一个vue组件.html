@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        vue组件
+            1.Vue.component("组件名称", "组件内部的定义对象");
+            2.组件是可以重复使用
+            3.组件中data数据的返回必须以函数的形式返回
+            4.组件模板中只能有一个根节点
+            5.vue对象中的所有属性和方法，组件中都有
+     -->
+    
+    <div id="app">
+        <my_component></my_component>
+        <my_component></my_component>
+        <my_component></my_component>
+        <my_component></my_component>
+    </div>
+
+    <script>
+        // Vue.component("组件名称", "组件内部的定义对象");
+        Vue.component("my_component", {
+            data: function() {
+                return {
+                    message: "这是一条消息"
+                }
+            },
+            template: "<h1>{{ message }}</h1>",
+
+        });
+
+        var vue = new Vue({
+            el: "#app",
+        });
+
+
+    </script>
+
+
+</body>
+</html>

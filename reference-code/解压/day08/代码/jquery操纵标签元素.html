@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="div1">
+        <p>这是一个p标签</p>
+    </div>
+
+    <script>
+        /*
+            append() - 在被选元素的结尾插入内容
+            prepend() - 在被选元素的开头插入内容
+            after() - 在被选元素之后插入内容
+            before() - 在被选元素之前插入内容
+        */
+        // $("#div1").append("<h6>h6标签111</h6>");
+        // $("#div1").prepend("<h6>h6标签222</h6>");
+        // $("#div1").after("<div>11111<div>");
+        // $("#div1").before("<div>22222<div>");
+
+        /*
+            remove（删自己）、empty（不删自己）
+        */
+        // $("#div1").remove();
+        $("#div1").empty();
+
+    </script>
+
+
+
+</body>
+</html>

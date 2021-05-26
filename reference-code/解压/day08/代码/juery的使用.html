@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jquery引用 -->
+    <script src="js/jquery-3.6.0.js"></script>
+    <!-- cdn引用jquery -->
+    <!-- <script src="https://lib.baomitu.com/jquery/3.6.0/jquery.js"></script> -->
+
+</head>
+<body>
+    
+    <h1>我是h1标签</h1>
+    <h1>我是h1标签</h1>
+
+    <h2 class="demo">我是h2标签</h2>
+    <h2 class="demo">我是h2标签</h2>
+
+    <h2 id="demo">我是h2标签</h2>
+    <h2>我是h2标签</h2>
+
+    <button id="btn">按钮</button>
+
+    <p id="p1">这是一个p标签</p>
+
+    <div id="div1">今天我很帅</div>
+
+    <input type="text" value="输入点内容">
+
+    <script>
+        /*
+            jquery的选择器:选中指定元素节点，
+                同document.querySelector和
+                document.querySelectorAll
+                选择器写法：同css选择器
+            $:泛指jquery对象
+            jquery选中的标签是一个juery对象，不是DOM对象
+        */ 
+        console.log($("h1"));
+        $("h1").text("这是修改后的h1");
+        console.log($(".demo"));
+        console.log($("#demo"));
+
+        /*
+            jquery事件的写法
+                jquery对象.事件()
+                on的形式
+            jquery中事件是叠加的
+            event:通过处理方法的形参来获取
+        */
+        $("#btn").click(function(e) {
+            console.log(e);
+            // 弹窗
+            alert("这是一个弹窗");
+            // 阻止默认事件
+            e.preventDefault(); 
+            // 阻止事件冒泡
+            e.stopPropagation();
+        });
+        // $("#btn").on("事件","事件处理");
+        $("#btn").on("click",function(){
+            alert("这是另外一个弹框");
+        });
+
+        /*
+            设置或获取文本元素
+                纯文本:text()|text("值")
+                可以添加标签：html()|html("值")
+                获取到的是value值:val()|val("值")
+        */
+        console.log($("#p1").text());
+        $("#p1").text("我是设置后的p标签");
+
+        console.log($("#div1").html());
+        $("#div1").html("<h1>今天确实挺帅</h1>");
+
+        console.log($("input").val());
+        $("input").val("修改后的value值");
+    </script>
+
+</body>
+</html>

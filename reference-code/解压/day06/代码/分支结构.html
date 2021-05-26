@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        /*
+            代码执行顺序：
+                -顺序结构
+                -分支结构
+                    if-elseif-else
+                    switch-case
+                -循环结构
+        */ 
+        // if(条件) {
+        //     // 代码
+        // } else if (条件) {
+        //     // 代码
+        // } else {
+        //     // 代码
+        // }
+
+        /*
+            switch-case:击穿性问题
+                当指匹配成功后，若没有break，则会一直往下运行代码
+                直到碰到break或者代码结束
+            break:结束switch-case使用
+        */
+        var key = 1;
+        switch(key) {
+            case 1:
+                // 代码
+                console.log("这个数是：1" );
+            case 2:
+                // 代码
+                console.log("这个数是：2" );
+            default:
+                // 代码
+                console.log("这个数我也不知道" );
+        }
+
+    </script>
+
+
+
+    
+</body> []
+</html>

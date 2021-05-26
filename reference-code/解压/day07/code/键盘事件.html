@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        img {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    
+    <img src="images/1.jpg" alt="">
+
+
+    <script>
+        let img = document.querySelector("img");
+        // 键盘事件需要绑定到文档上或者body上
+        document.onkeydown = function(e) {
+            let keyCode = e.keyCode;
+            let offsetLeft = img.offsetLeft;
+            let offsetTop = img.offsetTop;
+            // 按一次按键移动5px
+            switch(keyCode) {
+                case 38:
+                    img.style.top = (offsetTop-5)+"px";
+                    break;
+                case 39:
+                    img.style.left = (offsetLeft+5)+"px";
+                    break;
+                case 40:
+                    img.style.top = (offsetTop+50)+"px";
+                    break;
+                case 37:
+                    img.style.left = (offsetLeft-5)+"px";
+                    break;
+            }
+
+
+        }
+
+
+    </script>
+
+</body>
+</html>

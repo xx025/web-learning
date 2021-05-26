@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>这是一个p标签</p>
+    <p class="demo">这是一个p标签</p>
+    <p id="p">这是一个p标签</p>
+    <div id="div1">
+
+    </div>
+
+    <script>
+        /*
+            元素节点的获取
+                返回元素节点
+                    getElementById:根据id获取
+                    querySelector:根据选择器获取，多个时，取第一个
+                返回数组
+                    getElementsByTagName:根据标签名获取
+                    getElementsByClassName:根据class获取
+                    querySelectorAll:根据选择器获取
+            DOM树抽象出一个对象:document
+        */
+       // 根据标签名获取
+        let pList = document.getElementsByTagName("p");
+        console.log(pList);
+        let idP = document.getElementById("p");
+        console.log(idP);
+        let classP = document.getElementsByClassName("demo");
+        console.log(classP);
+        let idP2 = document.querySelector("p"); // 获取一个
+        console.log(idP2);
+        let ps = document.querySelectorAll("p");
+        console.log(ps);
+
+        /*
+            选中div节点
+            创建新节点
+                createElement("标签名称");
+            将新的节点塞到div节点中去
+                appendChild(标签);
+                参数是节点，不能是字符串
+            元素节点的删除
+                removeChild(标签);
+            元素节点替换
+                replaceChild(新节点,旧节点);
+        */
+        let div = document.querySelector("#div1");
+        let h1 = document.createElement("h1");
+        div.appendChild(h1);
+        // div.removeChild(h1);
+        let h2 = document.createElement("h2");
+        div.replaceChild(h2,h1);
+
+        /*
+            文本节点:
+                innerHTML取出或者设置给元素节点文本值
+                innerText取出或者设置给元素节点文本值
+                innerHTML是可以插入标签的，而innerText不行
+                
+        */
+        h2.innerHTML = "我是文本节点";
+        console.log(h2.innerHTML);
+
+        h2.innerText = "我是通过innerText赋值的";
+        console.log(h2.innerText);
+
+        div.innerHTML = "<h4>插入标签</h4>";
+        div.innerText = "<h4>插入标签</h4>";
+
+
+    </script>
+
+
+</body>
+</html>

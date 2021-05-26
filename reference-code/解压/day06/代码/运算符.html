@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            算数运算符：+、-、*、/、%、++、--
+                数字+其他类型时：
+                    其他类型（除字符串），其他类型先转化成数字，再运算
+                    字符串：做拼接操作，除+以外，字符串会转数字，在运行
+                
+        */
+        var num1 = 10;
+        var num2 = 20;
+        console.log(num1+num2);
+
+        console.log("数字+布尔:");
+        // console.log(num1+true); // 11 true->1
+
+        console.log("数字+null:");
+        // console.log(num1+null); // 10  null->0
+
+        var a;
+        console.log("数字+undefined")
+        // console.log(num1+a); // NaN  undefined->NaN
+        
+        console.log("数字+字符串")
+        console.log(num1+"123"); // 字符串拼接，一种转字符串的方式
+        console.log(num1-"123"); // 字符串->数字，然后运行
+
+        /*
+            比较运算符:>、>=、!=或者!==、==或者===、<=、<
+
+            !==:判断数值和类型 
+            ===:判断数值和类型    
+        */
+        console.log("数字1是否等于字符串1:")
+        console.log(1 == "1"); // true,比较的是数值
+        console.log(1 === "1"); // false,比较的是数值和类型
+        
+        /*
+            赋值运算符:=、+=、-=、/=、*=、%=
+        */
+
+        /*
+            与或非：&&、||、!
+            &&、||存在短路的情况
+        */
+
+        /*
+            三目运算符: 条件 ? true执行的内容:false执行的内容;
+        */
+        
+
+
+
+    </script>
+
+
+</body>
+</html>

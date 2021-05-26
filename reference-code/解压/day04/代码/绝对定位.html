@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+            绝对定位(子绝父相)
+                定位规则:找爸爸(带有相对定位的父元素)
+                语法:
+                    position: absolute
+                    位置:top right bottom left
+                特点:漂浮，舍弃原来位置
+         */
+        .box {
+           
+            width: 400px;
+            height: 400px;
+            background-color: lemonchiffon;
+        }
+
+        .box div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .div1 {
+            position: absolute;
+            /* top right bottom left */
+            right: 0px;
+            top: 0px;
+            background-color: lightblue;
+        }
+
+        .div2 {
+            background-color: lightcoral;
+        }
+
+        .gp {
+            position: relative;
+            widows: 600px;
+            height: 600px;
+            background-color: lightgrey;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="gp">
+        <div class="box">
+            <div class="div1"></div>
+            <div class="div2"></div>
+
+        </div>
+    </div>
+
+</body>
+</html>

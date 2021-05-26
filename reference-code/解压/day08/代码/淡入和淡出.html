@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: blanchedalmond;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 id="first">这个是h1标签</h1>
+    <div></div>
+    <h2>这是第二个h1标签</h2>
+
+    <script>
+
+        let div = $("div");
+        $("#first").click(function () {
+            // 隐藏
+            // div.fadeOut();
+            // 显示
+            // div.fadeIn();
+            div.fadeToggle('slow', function(){
+                console.log("方法运行了");
+            });
+        });
+
+
+    </script>
+
+</body>
+</html>

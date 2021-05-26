@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>{{ message }}</h1>
+    <div id="app">{{ message }}</div>
+
+    <script>
+        /*
+            el:           
+                1.el:vue的挂载点，支持css选择器的写法
+                2.建议使用id作为选择器
+                3.vue的作用范围是在挂载点内部
+                4.适合作为挂载点的是容器，一般使用div
+            data: 
+                定义数据
+        */ 
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                message: "hello world!"
+            }
+        });
+    </script>
+
+
+</body>
+</html>

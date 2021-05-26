@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div {
+            width: 200px;
+            height: 200px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        常用事件:
+            onsubmit:表单提交事件
+            onfocus:焦点聚集事件
+            onblur:失去焦点事件
+            onchange:内容发生改变事件
+            onselect:选中事件
+            onclick:点击事件
+            onkeydown:键盘按下事件
+            onmousemove:鼠标移动事件
+            onload:页面加载事件
+     -->
+    <button>按钮</button>
+    
+    <a href="http://www.baidu.com">跳转百度</a>
+
+    <div id="div">
+        <button id="btn">按钮</button>
+    </div>
+
+    <script>
+        /*
+            事件的两种添加方式
+                属性的形式
+                addEventListener形式
+            区别：
+                属性形式前后定义两相同的事件，后面会覆盖前面的
+                addEventListener形式定义事件会叠加
+        */ 
+        let btn = document.querySelector("button");
+        // 属性的形式设置点击事件
+        btn.onclick = function() {
+            console.log("按钮被点击了");
+        }
+
+        // btn.onclick = function() {
+        //     console.log("点击事件被重新定义了");
+        // }
+
+        // addEventListener("事件的类型",处理方法, 事件传递方式);
+        // 事件传递方式:默认false->事件冒泡，true->事件捕获
+        btn.addEventListener("click", function() {
+            console.log("addEventListener形式的事件添加");
+        });
+
+        /*
+            阻止默认事件
+                return false
+                preventDefault方法
+        */
+        let a = document.querySelector("a");
+        a.onclick = function(e) {
+            console.log("a被点击了");
+            // 1.return false来阻止默认事件
+            // return false;
+
+            // this->绑定事件的标签
+            // 2.使用阻止默认事件的方法
+            // e.preventDefault(); 
+        }
+
+        /*
+            事件冒泡
+                子元素的事件会一层一层往上传
+            阻止冒泡事件    
+                event:定义事件的方法，可以接收一个参数[事件]
+                方法:stopPropagation()
+        */
+        let btn2 = document.querySelector("#btn");
+        btn2.onclick = function (event) {
+            console.log("演示事件冒泡");
+            // 阻止冒泡事件
+            event.stopPropagation();
+        }
+
+        let div = document.querySelector("#div");
+        div.onclick = function () {
+            div.style.backgroundColor = "red";
+            
+        }
+
+    </script>
+
+
+</body>
+
+</html>

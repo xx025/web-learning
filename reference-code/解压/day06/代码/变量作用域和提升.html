@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            JS函数的提升
+                JS在执行的之前，会先加载JS中方法所有的方法
+                然后再执行代码
+        */ 
+        // fun1();
+        // function fun1() {
+        //     console.log("这是fun1方法");
+        // }
+        
+        /*
+            变量的提升：
+                变量在未声明之前使用，若后面没有声明，则报错
+                若有声明，那么变量值是undefined
+
+        */
+        console.log(a); // a->undefined
+        var a = 10;  // 全局变量
+
+        /*
+            变量的作用域问题：
+                定义在script标签中的变量成为全局变量，
+                    script标签中任意地方皆可访问
+                在方法中声明的变量，作用范围就是该方法
+        */
+        function fun2() {
+            console.log(a);
+        }
+        // fun2(); // 10
+
+        function fun3() {
+            var b = 15;
+        }
+        // console.log(b);
+
+        /*
+            let和const:代替var关键字来声明变量的
+                let:
+                    let 标识符 = 值;
+                    不同于var，不存变量提升
+                const:
+                    const 标识符 = 值;
+                    const创建的是常量，不能够修改
+        */
+        let c = 20;
+        console.log(c);
+
+        // 常量:不能值的变量
+        // var|let声明的变量都是可以修改值的
+        c = 30;
+        console.log(c); // 30
+        var d = 20;
+        d = 30;
+        console.log(d); // 30
+        const e = 20;
+        // e = 50;
+        console.log(e); // 不能修改
+
+        
+        
+
+
+
+
+    </script>
+
+</body>
+</html>

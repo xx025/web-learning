@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style> 
+        .box {
+            width: 400px;
+            /* height: 400px; */
+            background-color: lightgoldenrodyellow;
+        }
+
+        .box div {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: lightseagreen;
+        }
+
+        /* 1.空标签清除浮动,空标签必须是块元素 */
+        /* p {
+           clear: both; 
+        } */
+
+        /* 2.给父容器增加高度 */
+        /* 3.给父容器设置overflow为hidden */
+        /* .box {
+            overflow: hidden;
+        } */
+        /* 4.after伪类的形式 */
+        .box::after {
+            content: "";
+            width: 0;
+            height: 0;
+            visibility: hidden;
+            display: block;
+            clear: both;
+        }
+
+        p::after {
+            content: "--台词";
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="box">
+        <div></div>
+        <div></div>
+    </div>
+
+    <p>xxxxxxx</p>
+
+</body>
+</html>

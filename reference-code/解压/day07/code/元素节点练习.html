@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="content" value="xxx">
+    <button id="addBtn">添加</button>
+    <ul id="fruit_list">
+        <li>苹果</li>
+        <li>香蕉</li>
+    </ul>
+
+    <script>
+        /*
+            事件:和样式的使用差不多
+        */
+        let addBtn = document.querySelector("#addBtn");
+        let content = document.querySelector("#content");
+        let ul = document.querySelector("#fruit_list");
+        addBtn.onclick = function () {
+            let li = document.createElement("li");
+            li.innerText = content.value;
+            ul.appendChild(li);
+        }
+
+        /*
+            点击删除
+        */
+        // let liList = document.querySelectorAll("#fruit_list li");
+        // for (let li of liList) {
+        //     li.onclick = function() {
+        //         // 在ul中删除li
+        //         ul.removeChild(li);
+        //     }
+        // }
+
+        ul.onclick = function(e) {
+            let li = e.target;
+            ul.removeChild(li);
+        }
+
+    </script>
+
+
+</body>
+
+</html>

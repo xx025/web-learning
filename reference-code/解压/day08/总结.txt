@@ -1,0 +1,70 @@
+一、BOM对象(浏览器对象)
+    1.window(对于浏览器的抽象)
+        -网页上其他的对象都是window对象的属性
+        -alert
+        -confirm
+        -prompt
+    2.location(地址栏的抽象)
+        -href
+        -host
+        -hostname
+        -port
+        -protocol
+    3.navigator(浏览器信息)
+        -userAgent
+    4.history(浏览历史信息)
+        -back
+        -forward
+        -go
+二、定时器
+    -setInterval("处理函数", "时间毫秒")
+        -每隔指定时间运行一次
+        -clearInterval(定时器)
+    -setTimeout("处理函数", "时间毫秒")
+        -倒计时
+        -clearTimeout(定时器)
+三、jquery(js的类库)
+    1.jquery获取
+        -下载jquery的js文件，然后引入
+        -cdn的形式
+    2.选择器:$("选择器"),选择器同css选择器
+    3.标签元素的操作
+        -添加
+            preappend
+            append
+            before
+            after
+        -删除
+            remove:会删除自己和自己内部的标签
+            empty:删除自己内部的标签
+    4.文本元素的操作
+        -text()
+        -html()
+        -val()
+    5.属性元素的操作
+        属性相关
+            -attr("属性","属性值")
+        样式相关
+            操纵类
+                -addClass
+                -removeClass
+                -toggleClass
+            操纵样式
+                -css("样式", "样式值")
+        6.事件
+            -标签.事件()
+            -标签.on("事件", "事件处理")
+        7.特殊效果
+            -show("速度","事件处理")、hide、toggle
+            -fadeIn、fadeOut、fadeToggle
+            -slidDwon、slidUp、slidToggle
+            -animate("样式对象", "速度", "事件处理")
+        8.注意事项
+            使用的时候注意所使用的标签元素是不是jquery对象
+            若不是，需要转换:$(标签元素)
+四、字体图标
+    1.阿里字体图标库
+    2.字体图标库的使用
+        -引入iconfont.css
+        -创建标签并设置指定的样式
+    

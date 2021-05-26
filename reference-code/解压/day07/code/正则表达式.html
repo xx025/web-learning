@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            创建正则表达式的方式：
+                直接量的形式
+                通过对象创建
+        */ 
+        let reg1 = /xxx/;
+        let reg2 = new RegExp("xxx");
+
+        /*
+            正则表达式的验证：test
+        */ 
+        let isRight = reg1.test("x222xx1");
+        console.log("正则验证是否正确：" + isRight);
+        console.log(`正则验证是否正确：${isRight}`);
+
+        /*
+            验证方括号
+                验证的字符有abc中的任意一个即为正确
+                ^取反，[^]只要包含非括号中的字符，即为正确
+            ^:开头^[]
+            $:结尾
+        
+        */
+        let reg3 = /[^abc]/; 
+        let result = reg3.test("abcd");
+        console.log(`字符串是否是abc中的一个:${result}`);
+
+        /*
+            元字符
+                A-Z:大写字母A到Z
+                a-z:小写字母a到z
+                0-9:数字0到9
+                    \d表示数字
+                    \D表示非数字
+                \w:单词字符，指A-z和0-9
+                \W:非单词字符
+                .:任意字符，除换行和结束行，
+                    如果要是用.,可以进行转义\. \n \t \\
+        */
+        let reg4 = /./;
+        result = reg4.test("a");
+        console.log(result);
+
+        /*
+            量词
+                +:1到多个
+                *:0到多个
+                ?:0个或一个
+                {x}:x个
+                {x,y}:x-y个
+                {x,}:至少x个
+        */
+        let reg5 = /[\d]+/; // 匹配1到多个数字
+        let reg6 = /[\d]*/; // 匹配0到多个数字
+        let reg7 = /^abc[\d]?$/; // 匹配0或1个数字
+        let reg8 = /[\d]{10}/; // 匹配10个数字的字符串
+        let reg9 = /[\d]{2,10}/; // 匹配2-10个数字的字符串
+        let reg10 = /[\d]{2,}/; // 最少两个数字
+        result = reg7.test("abc");                   
+        console.log(result);
+
+        // 1220629442@qq.com 10000
+        let regQQ = /^[\d]{5,11}@qq\.com$/;
+        result = regQQ.test("1220629442@qq.com");
+        console.log(`QQ验证：${result}`);
+
+    </script>
+
+</body>
+</html>

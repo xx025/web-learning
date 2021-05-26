@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            转数字类型
+                -Number()
+
+        */
+        
+        // boolean类型转数字:true->1  false->0
+        var t = false;
+        var tNumber = Number(t);
+        console.log(typeof tNumber);
+        console.log(tNumber);
+
+        // null类型转数字：null->0
+        var n = null;
+        var nNumber = Number(n);
+        console.log(typeof nNumber);
+        console.log(nNumber);
+
+        // undfind类型转数字:undfind->NaN
+        var u;
+        var uNumber = Number(u);
+        console.log(typeof uNumber);
+        console.log(uNumber);
+
+        /*
+            字符串转数字:
+                Number()
+                    -纯数字字符串->数字
+                    -非纯数字字符串->NaN
+                parseInt():只识别数字
+                    -12px->12
+                    -12px12->1212?->12
+                    -12.123px->12.123?->21
+                parseFloat():识别小数点(仅一次)和数字
+                    -21.123px->21.123
+                    -21.123.123px->21.123.123?->21.123
+        */ 
+        var s = "123.123";
+        var sNumber = Number(s);
+        console.log(typeof sNumber);
+        console.log(sNumber);
+
+        var height = "21.123.123px";
+        var hNumber = parseInt(height);
+        console.log(hNumber);
+
+        var hFNumber = parseFloat(height);
+        console.log(hFNumber);
+
+        
+
+    </script>
+
+</body>
+</html>

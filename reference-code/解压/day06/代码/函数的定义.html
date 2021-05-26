@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+            关键词：function
+        */ 
+    //    function 方法名(参数列表) {
+    //        // 代码
+    //        return 返回值;
+    //    }
+
+        /*
+            无参无返回
+        */    
+        function fun1() {
+            console.log("这是一个无参无返回值的方法");
+        }
+        // fun1(); // 方法的调用
+
+        /*
+            有参方法
+            调用：
+                JS中没有重写重载，方法的标识就是其方法名
+                若参数匹配不上也是可以调用的
+                    -参数多余定义数量：只取用匹配的参数的数目
+                    -参数少于定义数量：缺少的部分是undefined
+        */ 
+        function fun2(name, age) {
+            console.log("姓名：" + name + ",年龄:" + age);
+        }
+        function fun2(name) {
+            console.log("姓名：" + name);
+        }
+        // fun2("张三", 18); 正确调用
+        // fun2("张三"); // 正确调用，age的值是undefined
+        // fun2("xxx","zzz","ssss") 正确调用，只匹配指定的参数
+
+        /*
+            有返回值的方法
+        */
+        function fun3() {
+            return "这是一个返回值";
+        }
+        // var result = fun3();
+        // console.log("结果是：" + result);
+
+
+    </script>
+</body>
+</html>

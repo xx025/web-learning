@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .show {
+            width: 200px;
+            height: 200px;
+            background-color: bisque;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- shift+alt+f:格式化代码 -->
+    <input type="text" value="value的值" id="input1">
+
+    <h1 id="h1" style="color: bisque;">属性节点</h1>
+
+    <div id="div"></div>
+    <script>
+        /* 
+            获取属性节点的值
+        */ 
+        let input1 = document.querySelector("#input1");
+        let value = input1.value;
+        console.log(`input的value值是：${value}`);
+
+        /*
+            设置属性节点的值
+        */
+        input1.value = "更改后的值";
+
+        /*
+            设置元素的样式
+        */
+        let h1 = document.querySelector("#h1");
+        h1.style.color = "red";
+
+        let div = document.querySelector("#div");
+        // 给元素添加class，使用className
+        div.className = "show"; 
+
+        /*
+            使用方法设置值
+        */ 
+        div.setAttribute("class", "");
+
+    </script>
+
+</body>
+
+</html>

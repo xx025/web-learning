@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+    
+    <div></div>
+
+    <script>
+        // $("div").animate('样式对象',速度,回调函数);
+        let style = {width:'600px', height:'600px'};
+        $("div").animate(style, 'slow', function(){
+            console.log("div变大了");
+        });
+
+    </script>
+
+</body>
+</html>

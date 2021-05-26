@@ -1,0 +1,64 @@
+/* 达内学子商城-公共部分css */
+/* 最简单的css样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+}
+/* a去掉下划线 */
+a {
+    text-decoration: none;
+}
+/* li去掉点 */
+li {
+    list-style: none;
+}
+
+/* 去掉input的外边框 */
+input {
+    outline: none;
+    border: 0;
+}
+
+/* html,body的宽度等同于浏览器的宽度 */
+html,body {
+    width: 100%;
+    font-family: Microsoft YaHei, "微软雅黑";
+    background-color: #f5f5f5;
+    font-size: 16px;
+    min-width: 1000px;
+}
+/* 在body中加一个wrap包裹进行整体控制,避免直接操作body */
+.wrap {
+    width: 100%;
+}
+/* 页面中文档流的部分 */
+.part {
+    width: 100%;
+}
+/* 用于控制宽度1000,并居中的情况 */
+.center {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* 清除浮动的方法 */
+.clearfloat:after{
+    content:"";
+    display:block;
+    clear:both;
+    visibility:hidden;
+    height:0;
+    width: 0;
+}
+.clearfloat{zoom:1}
+
+/* 左浮动 */
+.fl {
+    float: left;
+}
+
+/* 右浮动 */
+.fr {
+    float: right;
+}
+

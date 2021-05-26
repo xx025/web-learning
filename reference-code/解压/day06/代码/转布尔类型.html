@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            转布尔类型：
+                Boolean()
+                    空串->false
+                    0和NaN->false
+                    null->false
+                    undefind->false
+                    其他->true
+        */
+        var string = "";
+        console.log("空串转布尔：");
+        console.log(Boolean(string));
+
+        var number = NaN;
+        console.log("数字0转化布尔：");
+        console.log(Boolean(number));
+
+        var n = null;
+        console.log("null转化布尔：");
+        console.log(Boolean(n));
+
+        var u;
+        console.log("undefind转化布尔：");
+        console.log(Boolean(u));
+
+        var o = {};
+        console.log("对象转化布尔：");
+        console.log(Boolean(o));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

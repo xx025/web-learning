@@ -1,0 +1,67 @@
+一、正则表达式
+    1.创建
+        -直接量://
+        -对象:RegExp
+    2.方法:test()
+    3.[]:匹配括号中的任意的一个元素
+    4.^符号
+        -[^]:取反
+        -^[]:开头
+    5.$符号:结尾
+    6.元字符:
+        \d:数字0-9
+        \D:非数字
+        \w:0-9A-Za-z
+        \W:非0-9A-Za-z
+         .:代指任意字符
+    7.量词  
+        +:至少一个
+        *:0到多个
+        ?:0或者1个
+        {x,y}:最少x个，最多y个
+        {x}:x个
+        {x,}:至少x个
+    8.转义字符:使用\进行转义
+    /^[\d]{5,10}$/ -->5-10个数字
+二、DOM(页面中html的抽象)
+三、事件
+    1.常用的事件:键盘事件、鼠标事件
+    2.绑定事件
+        -绑定方式
+            -属性的方式
+            -addEventListener
+                -第一个参数:事件类型
+                -第二个参数:事件处理方法
+                -第三个参数:true->事件依赖  false(默认)->事件冒泡
+        -事件参数
+            -阻止默认事件
+                return false    
+                preventDefault()
+            -阻止事件冒泡
+                stopPropagation()
+        -事件委托
+            -事件的target
+四、元素节点
+    1.查找
+        返回单个元素
+            -getElementById()
+            -querySelector()
+        返回元素的数组
+            -getElementsByTagName()
+            -getElementsByClassName();
+            -querySelectorAll()
+    2.创建节点
+        document.createElement("标签名");
+    3.添加节点
+        appendChild(节点);
+    4.删除节点
+        removeChild(节点);
+五、文本节点
+    1.innerHTML
+    2.innerText
+        区别:innerHTML可以增加元素节点，innerText只能添加文本
+六、属性节点
+    1.元素节点.属性
+    2.元素节点.属性 = "属性值";
+    3.设置样式: 元素节点.style.样式 = "样式值";
+    4.元素节点.setAttribute("属性","属性值");

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            相对定位: 相对于自己的位置
+                语法: 
+                    position:relative
+                    方向和尺寸: top right bottom left
+                特点:
+                    原位置继续占有
+                    会飘浮起来
+         */
+        .box {
+            width: 400px;
+            height: 400px;
+            background-color: greenyellow;
+            margin: 0 auto;
+        }
+
+        .div1,.div2,.div3 {
+            width: 100px;
+            height: 100px;
+        }
+
+        .div1 {
+            background-color: grey;
+        }
+
+        .div2 {
+            position: relative;
+            /* top right bottom left */
+            left: -20px;
+            top: -20px;
+            background-color: khaki;
+            z-index: 100;
+        }
+
+        .div3 {
+            background-color: lavenderblush;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+    </div>
+
+</body>
+</html>

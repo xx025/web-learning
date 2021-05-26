@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            数组定义：
+                - new Array();
+                - [];
+                - 注意:数组中尽量存储统一类型的数据
+        */
+        let array1 = new Array(1, 2, 3);
+        console.log(array1);
+
+        let array2 = [1, 2, 4];
+        console.log(array2);
+
+        /*
+            数组的取用、设置、长度
+                取用:通过下标取用，下标从0开始
+                设置:array3[1] = 15;
+                长度:length属性
+        */
+        let array3 = [1, 5, 9];
+        console.log(array3[1]); // 取用
+        array3[1] = 15; // 设置
+        console.log(array3[1]); // 取用
+        console.log(array3.length); //长度
+
+        /*
+            数组的遍历
+                循环:for,for-in,for-of,map
+        */
+        let array4 = ["张三", "李四", "小明", "小红"];
+        // for(let index in array4) {
+        //     console.log(array4[index]); 下标
+        // }
+
+        // for(let item of array4) {
+        //     console.log(item); // 值
+        // }
+
+        // array4.map(匿名函数);
+        // array4.map(function(item, index){
+        //     console.log(item);
+        //     console.log(index);
+        // });
+        // (参数)=>{代码块}
+        // array4.map((item, index)=>{
+        //     console.log(item);
+        //     console.log(index);
+        // });
+        
+        /*
+            数组的常用方法:
+                concat:数组拼接
+        */
+        let array5 = [1, 2];
+        let array6 = [4, 5];
+        let arrayNew = array5.concat(array6);
+        console.log(arrayNew);
+
+        arrayNew.push(9);
+        console.log(arrayNew);
+        arrayNew.pop();
+        console.log(arrayNew);
+        console.log(arrayNew.join("-"));
+
+    </script>
+
+
+</body>
+</html>

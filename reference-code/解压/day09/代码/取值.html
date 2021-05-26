@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        取值的三种方式：
+            {{}}
+            v-text
+            v-html
+            上面两种不会渲染html标签，v-html会渲染并添加html标签
+        JS表达式
+            在三种取值里面都可以进行JS表达式的使用
+        对象的取用: 对象.属性
+        数组的取用: 数组[下标]
+        注意事项：未定义的数据，取用的时候会报错
+     -->
+    <div id="app">
+        <h1>{{ message + "你好" }}</h1>
+        <h2 v-text="message+'你好'"></h2>
+        <h1 v-html="message+'你好'"></h1>
+        <div v-html="h1"></div>
+        <!-- <div v-text="sssss"></div> -->
+        <!-- 取用对象属性 -->
+        <h1>{{ student.name }}</h1>
+        <!-- 数组取用 -->
+        <h1>{{ users[0] }}</h1>
+    </div>
+
+    <script>
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                message: "hello vue",
+                h1: "<h1>这是一个h1标题</h1>",
+                student: {
+                    name: "张三"
+                },
+                users: ["张三", "李四"],
+            }
+               
+
+        });
+
+        let a = "hello vue" + "你好";
+
+    </script>
+
+
+</body>
+</html>

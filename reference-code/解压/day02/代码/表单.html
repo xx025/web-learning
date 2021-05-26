@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        表单:form标签
+            action:表单的请求地址
+            method:表单提交的类型，常用有get和post，默认是get方式
+                get和post方式的区别： 
+                    1.提交参数的方式不同，get是拼接到url中
+                    2.提交参数的大小不一样，get只能提交200K左右，post无限制
+        表单元素:
+            input
+                name:提交到后台参数的标识
+                value:参数
+                placeholder:文本提示
+                disabled:禁用输入框
+                type
+                    text:文本输入框
+                    password:密码框
+                    radio:单选框，单选框是通过相同name来形成互斥的
+                    checkbox:复选框
+                    hidden:隐藏框
+                    file:文件输入框
+                    submit:按钮，提交表单
+                    reset:按钮，重置表单
+            select:下拉选
+                option:下拉选项
+                    默认选中的是第一个option
+                    selected属性可以更改默认选中
+            textarea:文本域
+                cols:设置文本域的宽度
+                rows:设置文本域的高度
+                注意事项:文本域的值是放在两个标签中间的值，没有value值
+            表单元素都不是独占一行的
+
+     -->
+
+
+
+    <!-- 
+        action:请求的地址
+        method:请求提交的方式
+            get:将参数拼接到url中，get请求提交参数的大小是有限制的，限制200K
+            post：将参数隐藏起来
+    -->
+    <form action="" method="GET">
+        <!-- 
+            input：输入框
+            type:text是文本输入框
+            placeholder:输入框提示
+            value:输入框传入后台的值
+            name:输入框传入后台值的标识
+            disabled:禁用输入框
+                1.禁用输入框
+                2.输入框不能被提交
+        -->
+        <input type="text" disabled placeholder="请输入用户名" value="张三" name="username">
+
+        <br>
+        <!-- type:password密码输入框 -->
+        <input type="password" placeholder="请输入密码" name="password">
+
+        <br>
+        <!-- 
+            type:radio 单选框
+            注意事项：
+                1.radio是通过name属性来形成组的，即相同name的为一组
+                    相同组里的单选框是互斥的
+                2.raido传递到后台的值是value的值，不是显示出来的值
+        -->
+        <input type="radio" name="sex1" value="男" id="man">
+        <label for="man">汉子</label>
+        <input type="radio" name="sex" value="女" id="woman">
+        <label for="woman">女子</label>
+        <input type="radio" name="sex" value="保密" id="s">
+        <label for="s">保密</label>
+        
+        <br>
+        <!-- 
+            type:checkbox 复选框
+         -->
+        <p>兴趣爱好：</p>
+        <input type="checkbox" id="study" value="study" name="hobbies">
+        <label for="study">学习</label>
+        
+        <input type="checkbox" id="game" value="game" name="hobbies">
+        <label for="game">打游戏</label>
+
+        <input type="checkbox" id="read" value="read" name="hobbies">
+        <label for="read">读书</label>
+
+        <br>
+        <!-- 
+            select:下拉选
+                默认选中的是第一项
+            option:下拉选的选项
+                指定选中使用selected
+        -->
+        <select name="area">
+            <option>请选择省份</option>
+            <option value="山东" selected>山东省</option>
+            <option value="山西">山西省</option>
+            <option value="河北">河北省</option>
+        </select>
+
+        <br>
+        <!-- 
+            textarea:文本域
+                cols:文本域的宽度
+                rows:文本域的高度
+                默认值:没有value值，直接写在标签中即可
+
+        -->
+        <textarea name="" id="" cols="20" rows="10">xxxxx</textarea>
+
+        <!-- 
+            type：hidden隐藏的输入框
+                可以提交一些不想让别人看见的东西    
+        -->
+        <input type="hidden" name="xxx" value="222222">
+
+        <br>
+        <!-- type:file文件输入框 -->
+        <input type="file" name="photo">
+
+        <br>
+        <!-- 
+            提交和重置form表单指的是：提交或者重置该按钮所在的form表单
+         -->
+        <input type="submit" value="注册">
+        <input type="reset" value="重置">
+
+
+
+    </form>
+    
+
+</body>
+</html>
