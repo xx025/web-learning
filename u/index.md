@@ -1,1 +1,2 @@
-[JavaSpring](/javaspring)
+[JavaSpring](javaspring/)
+
