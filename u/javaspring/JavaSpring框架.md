@@ -284,7 +284,100 @@ JavaWeb（Servlet+JSP(el jstl)）
    - 练习
 
      1. 定义Cat类，属性name和age 完成属性的注入
+     
+        ```java
+        public class Test01 {
+        	/*
+        	 * Spring DI依赖注入：构造方法
+        	 */
+        	@Test
+        	public void test01(){
+        		//1、初始化Spring容器
+        		ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
+        		//2、获得Hero
+        		Hero hero=(Hero)context.getBean("hero");
+        		System.out.println(hero);
+        		Cat cat=(Cat)context.getBean("cat");
+        		System.out.println(cat);
+        	}
+        	
+        ```
+     
+        ```xml
+        	<!-- 配置Dog类 --> 
+        	<bean id="dog" class="com.lddx.domain.Dog">
+        		<!-- 对Dog类中的属性完成set方式的依赖注入 -->
+        		<property name="name" value="旺财"></property>
+        		<property name="age" value="5"></property>
+        	</bean>
+        	
+        	<!-- 配置Cat类 -->
+        	<bean id="cat" class="com.lddx.domain.Cat">
+        		<!-- 对Cat类中的属性完成set方法的依赖注入 -->
+        		<property name="name" value="汤姆"></property>
+        		<property name="age" value="3"></property>
+        	</bean>
+        	
+        ```
+     
+        
+     
      2. 在Hero类中追加Cat cat属性，完成属性的注入
+     
+        ```xml
+        <!-- 配置Hero类
+        	         使用构造方法完成依赖注入
+        	 -->
+        	 	<!-- 构造方法注入
+        			 index=""哪个位置的参数，从0开始
+        			 name=""哪个名字的参数
+        			 type=""什么类型的参数
+        			 value=""要赋什么值
+        			 name和index可以都写，也可以只写一个，通常
+        			 写index。
+        		 -->
+        	<bean id="hero" class="com.lddx.domain.Hero">
+        		<!-- 
+        			说明：Spring在创建Hero的时候调用的是有参构造
+        			          方法，但是在Hero类中也要添加无参构造，是
+        			          为了防止不使用有参构造的方式注入保证Hero
+        			          能正常创建。
+        		 -->
+        		<constructor-arg index="0" name="name" 
+        		   type="String" value="张三"></constructor-arg>
+        		<constructor-arg index="1" type="int" 
+        		   value="50"></constructor-arg>
+        		<constructor-arg index="2" 
+        		  type="com.lddx.domain.Dog" ref="dog"></constructor-arg>
+        		<constructor-arg index="3" type="com.lddx.domain.Cat"
+        		  ref="cat"></constructor-arg>
+        		<constructor-arg index="4" type="java.util.ArrayList">
+        			<list>
+        				<value>a</value>
+        				<value>b</value>
+        				<value>c</value>
+        			</list>  
+        		</constructor-arg>
+        	</bean>
+        	
+        	<!-- 配置Dog类 -->
+        	<bean id="dog" class="com.lddx.domain.Dog">
+        		<!-- 构造方法注入
+        		<constructor-arg index="0" type="String" value="旺财"></constructor-arg>
+        		<constructor-arg index="1" type="int" value="6"></constructor-arg>
+        		-->
+        		<!-- 使用set方法注入 -->
+        		<property name="name" value="小狗狗"></property>
+        		<property name="age" value="7"></property>
+        	</bean>
+        	<!-- 配置Cat类 -->
+        	<bean id="cat" class="com.lddx.domain.Cat">
+        		<constructor-arg index="0" type="String" value="小猫猫"></constructor-arg>
+        		<constructor-arg index="1" type="int" value="3"></constructor-arg>
+        	</bean>
+        ```
+     
+        
 
 
 
